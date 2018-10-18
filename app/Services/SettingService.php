@@ -1,0 +1,94 @@
+<?php
+
+namespace App\Services;
+
+use App\Common\AppCommon;
+use App\Common\Constant;
+use App\Models\SettingAppInfo;
+use Illuminate\Http\Request;
+
+class SettingService extends BaseService{
+
+    public function getBannerAll(){
+        return $this->settingLogic->getBannerAll();
+    }
+
+    public function createBanner(Request $request){
+        $fileImage = $request->file('src_image');
+        if(isset($fileImage)){
+            $srcImage = AppCommon::moveImage($fileImage, Constant::$PATH_FOLDER_UPLOAD_IMAGE_BANNER);
+            return $this->settingLogic->createBanner($srcImage);
+        }
+        return null;
+    }
+
+    public function deleteBanner($bannerId){
+        $this->settingLogic->deleteBanner($bannerId);
+    }
+
+    //Start Top Banner
+    public function getTopBannerAll(){
+        return $this->settingLogic->getTopBannerAll();
+    }
+
+    public function createTopBanner(Request $request){
+        $fileImage = $request->file('src_image');
+        if(isset($fileImage)){
+            $srcImage = AppCommon::moveImage($fileImage, Constant::$PATH_FOLDER_UPLOAD_IMAGE_TOP_BANNER);
+            return $this->settingLogic->createTopBanner($srcImage);
+        }
+        return null;
+    }
+
+    public function deleteTopBanner($bannerId){
+        $this->settingLogic->deleteTopBanner($bannerId);
+    }
+    //End Top banner
+
+    //Start Tag Key
+    public function getTagAll(){
+        return $this->settingLogic->getTagAll();
+    }
+
+    public function getTagByTagType($tagTypeId){
+        return $this->settingLogic->getTagByTagType($tagTypeId);
+    }
+
+    public function createTag(Request $request){
+        $tagName = $request->tag_name;
+        $productTypeId = $request->product_type_id;
+        $sortNumber = $request->sort_number;
+        if(isset($sortNumber)){
+            $sortNumber = 1;
+        }
+        $tabTypeId = $request->tab_type;
+        $this->settingLogic->createTag($tabTypeId,$productTypeId,$tagName,$sortNumber);
+        return null;
+    }
+
+    public function deleteTag($tagId){
+        $this->settingLogic->deleteTag($tagId);
+    }
+    //End Tag Key
+
+    //Start App Info
+    public function getAppInfo(){
+        $appInfo = $this->settingLogic->getAppInfo();
+        if(!isset($appInfo)){
+            $appInfo = $this->settingLogic->createAppInfo();
+        }
+        return $appInfo;
+    }
+
+    public function updateAppInfo(Request $request){
+        $params['appId'] = $request->app_id;
+        $params['appName'] = $request->app_name;
+        $params['appPhone'] = $request->app_phone;
+        $params['appFax'] = $request->app_fax;
+        $params['appEmail'] = $request->app_email;
+        $params['appFacebook'] = $request->app_facebook;
+        $params['appAddress'] = $request->app_address;
+        $this->settingLogic->updateAppInfo($params);
+    }
+    //End App Info
+}
