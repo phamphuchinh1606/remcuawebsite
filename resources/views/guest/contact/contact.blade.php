@@ -28,10 +28,10 @@
                                 <h3 class="name-head">
                                     <span>Bạn cần hỗ trợ? Hãy gửi thông tin cho chúng tôi</span>
                                 </h3>
-                                <form accept-charset="UTF-8" action="/contact" class="contact-form" method="post">
+                                <form accept-charset="UTF-8" action="{{route('contact.send_contact')}}" class="contact-form" method="post">
                                     <input name="form_type" type="hidden" value="contact">
                                     <input name="utf8" type="hidden" value="✓">
-
+                                    @csrf
 
                                     <div class="row">
                                         <div class="col-sm-6 col-xs-12">
@@ -41,7 +41,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <span class="ico"><i class="fa fa-phone" aria-hidden="true"></i></span>
-                                                <input required="" type="text" id="contactFormPhone" class="form-control input-lg" name="contact[phone]" placeholder="Tên của bạn" autocapitalize="words" value="">
+                                                <input required="" type="text" id="contactFormPhone" class="form-control input-lg" name="contact[phone]" placeholder="Số điện thoại" autocapitalize="words" value="">
                                             </div>
                                             <div class="form-group">
                                                 <span class="ico"><i class="fa fa-envelope" aria-hidden="true"></i></span>
@@ -51,7 +51,7 @@
                                         <div class="col-sm-6 col-xs-12">
                                             <div class="form-group">
                                                 <label for="contactFormMessage" class="sr-only">Nội dung</label>
-                                                <textarea required="" rows="6" name="contact[body]" class="form-control" placeholder="Viết bình luận" id="contactFormMessage"></textarea>
+                                                <textarea required="" rows="7" name="contact[body]" class="form-control" placeholder="Viết bình luận" id="contactFormMessage"></textarea>
                                             </div>
                                         </div>
                                         <div class="col-sm-12 col-xs-12">

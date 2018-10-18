@@ -8,86 +8,94 @@
             <div class="layered_subtitle">Loại Sản Phẩm</div>
             <div class="layered-content filter-brand">
                 <ul class="check-box-list">
+                    @foreach($productTypes as $productType)
+                        <li>
+                            <input type="checkbox" id="product_type{{$productType->id}}" name="cc" data-vendor="(vendor:product**{{$productType->id}})">
+                            <label for="product_type{{$productType->id}}">
+                                <span class="button"></span>
+                                {{$productType->product_type_name}}
+                            </label>
+                        </li>
+                    @endforeach
+                    {{--<li>--}}
+                        {{--<input type="checkbox" id="brand1" name="cc" data-vendor="(vendor:product**Aristino)">--}}
+                        {{--<label for="brand1">--}}
+                            {{--<span class="button"></span>--}}
+                            {{--Ví Nam--}}
+                        {{--</label>--}}
+                    {{--</li>--}}
 
-                    <li>
-                        <input type="checkbox" id="brand1" name="cc" data-vendor="(vendor:product**Aristino)">
-                        <label for="brand1">
-                            <span class="button"></span>
-                            Ví Nam
-                        </label>
-                    </li>
+                    {{--<li>--}}
+                        {{--<input type="checkbox" id="brand2" name="cc" data-vendor="(vendor:product**Juno)">--}}
+                        {{--<label for="brand2">--}}
+                            {{--<span class="button"></span>--}}
+                            {{--Ví Nữ--}}
+                        {{--</label>--}}
+                    {{--</li>--}}
 
-                    <li>
-                        <input type="checkbox" id="brand2" name="cc" data-vendor="(vendor:product**Juno)">
-                        <label for="brand2">
-                            <span class="button"></span>
-                            Ví Nữ
-                        </label>
-                    </li>
+                    {{--<li>--}}
+                        {{--<input type="checkbox" id="brand3" name="cc" data-vendor="(vendor:product**Gucci)">--}}
+                        {{--<label for="brand3">--}}
+                            {{--<span class="button"></span>--}}
+                            {{--Ví 12 Con Giáp--}}
+                        {{--</label>--}}
+                    {{--</li>--}}
 
-                    <li>
-                        <input type="checkbox" id="brand3" name="cc" data-vendor="(vendor:product**Gucci)">
-                        <label for="brand3">
-                            <span class="button"></span>
-                            Ví 12 Con Giáp
-                        </label>
-                    </li>
+                    {{--<li>--}}
+                        {{--<input type="checkbox" id="brand4" name="cc" data-vendor="(vendor:product**Zalora)">--}}
+                        {{--<label for="brand4">--}}
+                            {{--<span class="button"></span>--}}
+                            {{--Ví Tình Yêu--}}
+                        {{--</label>--}}
+                    {{--</li>--}}
 
-                    <li>
-                        <input type="checkbox" id="brand4" name="cc" data-vendor="(vendor:product**Zalora)">
-                        <label for="brand4">
-                            <span class="button"></span>
-                            Ví Tình Yêu
-                        </label>
-                    </li>
+                    {{--<li>--}}
+                        {{--<input type="checkbox" id="brand5" name="cc" data-vendor="(vendor:product**Zara)">--}}
+                        {{--<label for="brand5">--}}
+                            {{--<span class="button"></span>--}}
+                            {{--Ví Phong Cảnh--}}
+                        {{--</label>--}}
+                    {{--</li>--}}
 
-                    <li>
-                        <input type="checkbox" id="brand5" name="cc" data-vendor="(vendor:product**Zara)">
-                        <label for="brand5">
-                            <span class="button"></span>
-                            Ví Phong Cảnh
-                        </label>
-                    </li>
+                    {{--<li>--}}
+                        {{--<input type="checkbox" id="brand6" name="cc" data-vendor="(vendor:product**H&amp;M)">--}}
+                        {{--<label for="brand6">--}}
+                            {{--<span class="button"></span>--}}
+                            {{--Ví Cầu An--}}
+                        {{--</label>--}}
+                    {{--</li>--}}
 
-                    <li>
-                        <input type="checkbox" id="brand6" name="cc" data-vendor="(vendor:product**H&amp;M)">
-                        <label for="brand6">
-                            <span class="button"></span>
-                            Ví Cầu An
-                        </label>
-                    </li>
+                    {{--<li>--}}
+                        {{--<input type="checkbox" id="brand7" name="cc" data-vendor="(vendor:product**Prada)">--}}
+                        {{--<label for="brand7">--}}
+                            {{--<span class="button"></span>--}}
+                            {{--Ví Năm Mới--}}
+                        {{--</label>--}}
+                    {{--</li>--}}
 
-                    <li>
-                        <input type="checkbox" id="brand7" name="cc" data-vendor="(vendor:product**Prada)">
-                        <label for="brand7">
-                            <span class="button"></span>
-                            Ví Năm Mới
-                        </label>
-                    </li>
+                    {{--<li>--}}
+                        {{--<input type="checkbox" id="brand7" name="cc" data-vendor="(vendor:product**Prada)">--}}
+                        {{--<label for="brand7">--}}
+                            {{--<span class="button"></span>--}}
+                            {{--Ví Tình Ca--}}
+                        {{--</label>--}}
+                    {{--</li>--}}
 
-                    <li>
-                        <input type="checkbox" id="brand7" name="cc" data-vendor="(vendor:product**Prada)">
-                        <label for="brand7">
-                            <span class="button"></span>
-                            Ví Tình Ca
-                        </label>
-                    </li>
+                    {{--<li>--}}
+                        {{--<input type="checkbox" id="brand7" name="cc" data-vendor="(vendor:product**Prada)">--}}
+                        {{--<label for="brand7">--}}
+                            {{--<span class="button"></span>--}}
+                            {{--Sản Phẩm Hot--}}
+                        {{--</label>--}}
+                    {{--</li>--}}
 
-                    <li>
-                        <input type="checkbox" id="brand7" name="cc" data-vendor="(vendor:product**Prada)">
-                        <label for="brand7">
-                            <span class="button"></span>
-                            Sản Phẩm Hot
-                        </label>
-                    </li>
-
-                    <li>
-                        <input type="checkbox" id="brand7" name="cc" data-vendor="(vendor:product**Prada)">
-                        <label for="brand7">
-                            <span class="button"></span>
-                            Ví Khuyến Mãi
-                        </label>
-                    </li>
+                    {{--<li>--}}
+                        {{--<input type="checkbox" id="brand7" name="cc" data-vendor="(vendor:product**Prada)">--}}
+                        {{--<label for="brand7">--}}
+                            {{--<span class="button"></span>--}}
+                            {{--Ví Khuyến Mãi--}}
+                        {{--</label>--}}
+                    {{--</li>--}}
 
                 </ul>
             </div>

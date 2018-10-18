@@ -13,3 +13,4 @@
 
 
 Route::get('/contact','ContactController@index')->name('contact');
+Route::post('/contact/send-contact','ContactController@sendContact')->name('contact.send_contact');

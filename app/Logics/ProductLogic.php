@@ -124,8 +124,8 @@ class ProductLogic extends BaseLogic{
     }
 
     //Logic Guest
-    public function getListProductByProductType($productTypeId){
-        $products = Db::table(TableNameDB::$TableProduct.' as product')
+    public function getListProductByProductType($productTypeId, $sortBy, $limitPage = 12){
+        $query = Db::table(TableNameDB::$TableProduct.' as product')
             ->where('is_delete',Constant::$DELETE_FLG_OFF)
             ->where('is_public', Constant::$PUBLIC_FLG_ON)
             ->whereIn('product_type_id',function($query) use ($productTypeId){
@@ -133,9 +133,38 @@ class ProductLogic extends BaseLogic{
                     ->from(TableNameDB::$TableProductType)
                     ->where('id',$productTypeId)
                     ->orWhere('parent_id',$productTypeId);
-            })
-            ->orderBy('created_at','desc')
-            ->get();
+            });
+        if($sortBy != null){
+            switch ($sortBy){
+                case Constant::$SORT_BY_PRODUCT_CREATED_ASCENDING:
+                    $query->orderBy('created_at','asc');
+                    break;
+                case Constant::$SORT_BY_PRODUCT_CREATED_DESCENDING:
+                    $query->orderBy('created_at','desc');
+                    break;
+                case Constant::$SORT_BY_PRODUCT_PRICE_ASCENDING:
+                    $query->orderBy('product_price','asc');
+                    break;
+                case Constant::$SORT_BY_PRODUCT_PRICE_DESCENDING:
+                    $query->orderBy('product_price','desc');
+                    break;
+                case Constant::$SORT_BY_PRODUCT_TITLE_ASCENDING:
+                    $query->orderBy('product_name','asc');
+                    break;
+                case Constant::$SORT_BY_PRODUCT_TITLE_DESCENDING:
+                    $query->orderBy('product_name','desc');
+                    break;
+                case Constant::$SORT_BY_PRODUCT_BEST_SELLING:
+                    $query->orderBy('qty_sale_order','desc');
+                    break;
+                default:
+                    $query->orderBy('created_at','desc');
+                    break;
+            }
+        }else{
+            $query->orderBy('created_at','desc');
+        }
+        $products = $query->paginate($limitPage);
         return $products;
     }
 }

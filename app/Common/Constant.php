@@ -22,4 +22,12 @@ class Constant{
     public static $PATH_FOLDER_UPLOAD_IMAGE_BANNER = "banners";
     public static $PATH_FOLDER_UPLOAD_IMAGE_TOP_BANNER = 'top_banners';
     public static $PATH_FOLDER_UPLOAD_IMAGE_BLOG = "blogs";
+
+    public static $SORT_BY_PRODUCT_CREATED_DESCENDING = 'created-descending';
+    public static $SORT_BY_PRODUCT_CREATED_ASCENDING = 'created-ascending';
+    public static $SORT_BY_PRODUCT_PRICE_ASCENDING = 'price-ascending';
+    public static $SORT_BY_PRODUCT_PRICE_DESCENDING = 'price-descending';
+    public static $SORT_BY_PRODUCT_TITLE_ASCENDING = 'title-ascending';
+    public static $SORT_BY_PRODUCT_TITLE_DESCENDING = 'title-ascending';
+    public static $SORT_BY_PRODUCT_BEST_SELLING = 'best-selling';
 }

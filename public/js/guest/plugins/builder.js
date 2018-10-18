@@ -370,7 +370,7 @@ STB.Collection = {
 	get_Query: function(){
 		var _query = '', _price = '', _vendor = '', _color = '', _size = '', _id = '';
 		_id = $('#coll-handle').val();
-		var _str = '/search?q=filter=';
+		var _str = 'collection/search?q=filter=';
 		_query = "("+_id+")";
 
 		jQuery('.filter-price ul.check-box-list li.active').each(function(){

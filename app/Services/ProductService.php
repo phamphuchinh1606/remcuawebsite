@@ -118,12 +118,12 @@ class ProductService extends BaseService{
     }
 
     //Service Guest
-    public function getListProductByProductType($productTypeId){
+    public function getListProductByProductType($productTypeId, $sortBy){
         $products = [];
         if($productTypeId == null){
             $products = $this->getAllLProduct();
         }else{
-            $products = $this->productLogic->getListProductByProductType($productTypeId);
+            $products = $this->productLogic->getListProductByProductType($productTypeId,$sortBy);
         }
         return $products;
     }

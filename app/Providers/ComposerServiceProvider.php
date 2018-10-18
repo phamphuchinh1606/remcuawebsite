@@ -17,7 +17,7 @@ class ComposerServiceProvider extends ServiceProvider
         View::composer(
             ['admin.common.__select_product_type', 'admin.common.__select_vendor',
                 'guest.home.partials.__menu_sidebar','guest.common.__right_linklist_menu',
-                'guest.layouts.master'],
+                'guest.layouts.master', 'guest.common.__search_product'],
             'App\Http\ViewComposers\ProductComposer'
         );
         //Build data tag
