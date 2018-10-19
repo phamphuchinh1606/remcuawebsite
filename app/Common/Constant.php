@@ -11,6 +11,11 @@ class Constant{
     public static $PUBLIC_FLG_OFF = 0;
     public static $PUBLIC_FLG_OFF_NAME = "Không công khai";
 
+    public static $STATUS_READ_ON = 1;
+    public static $STATUS_READ_ON_NAME = "Đã đọc";
+    public static $STATUS_READ_OFF = 0;
+    public static $STATUS_READ_OFF_NAME = "Chưa đọc";
+
     public static $TAG_KEY_ONE = 1;
     public static $TAG_KEY_TWO = 2;
 

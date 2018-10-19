@@ -149,6 +149,7 @@ return [
         Darryldecode\Cart\CartServiceProvider::class,
         Galahad\LaravelAddressing\ServiceProvider::class,
         Ixudra\Curl\CurlServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -215,6 +216,7 @@ return [
         'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
         'Addressing' => Galahad\LaravelAddressing\AddressFacade::class,
         'Curl' => Ixudra\Curl\Facades\Curl::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];

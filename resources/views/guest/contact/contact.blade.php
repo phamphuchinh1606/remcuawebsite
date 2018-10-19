@@ -28,6 +28,9 @@
                                 <h3 class="name-head">
                                     <span>Bạn cần hỗ trợ? Hãy gửi thông tin cho chúng tôi</span>
                                 </h3>
+                                @if(\Session::has('message'))
+                                    <div class="alert alert-success"> {{ \Session::get('message') }}</div>
+                                @endif
                                 <form accept-charset="UTF-8" action="{{route('contact.send_contact')}}" class="contact-form" method="post">
                                     <input name="form_type" type="hidden" value="contact">
                                     <input name="utf8" type="hidden" value="✓">
@@ -37,21 +40,21 @@
                                         <div class="col-sm-6 col-xs-12">
                                             <div class="form-group">
                                                 <span class="ico"><i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
-                                                <input required="" type="text" id="contactFormName" class="form-control input-lg" name="contact[name]" placeholder="Tên của bạn" autocapitalize="words" value="">
+                                                <input required="" type="text" id="contactFormName" class="form-control input-lg" name="guest_name" placeholder="Tên của bạn" autocapitalize="words" value="">
                                             </div>
                                             <div class="form-group">
                                                 <span class="ico"><i class="fa fa-phone" aria-hidden="true"></i></span>
-                                                <input required="" type="text" id="contactFormPhone" class="form-control input-lg" name="contact[phone]" placeholder="Số điện thoại" autocapitalize="words" value="">
+                                                <input required="" type="text" id="contactFormPhone" class="form-control input-lg" name="guest_phone" placeholder="Số điện thoại" autocapitalize="words" value="">
                                             </div>
                                             <div class="form-group">
                                                 <span class="ico"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                                                <input required="" type="email" name="contact[email]" placeholder="Email của bạn" id="contactFormEmail" class="form-control input-lg" autocorrect="off" autocapitalize="off" value="">
+                                                <input required="" type="email" name="guest_email" placeholder="Email của bạn" id="contactFormEmail" class="form-control input-lg" autocorrect="off" autocapitalize="off" value="">
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-xs-12">
                                             <div class="form-group">
                                                 <label for="contactFormMessage" class="sr-only">Nội dung</label>
-                                                <textarea required="" rows="7" name="contact[body]" class="form-control" placeholder="Viết bình luận" id="contactFormMessage"></textarea>
+                                                <textarea required="" rows="7" name="guest_content" class="form-control" placeholder="Viết bình luận" id="contactFormMessage"></textarea>
                                             </div>
                                         </div>
                                         <div class="col-sm-12 col-xs-12">

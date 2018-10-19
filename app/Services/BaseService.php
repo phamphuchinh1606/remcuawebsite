@@ -2,7 +2,14 @@
 
 namespace App\Services;
 
-use App\Logics\{ProductTypeLogic, ProductLogic, ProductImageLogic, VendorLogic, SettingLogic, BlogLogic, AddressLogic};
+use App\Logics\{ContactLogic,
+    ProductTypeLogic,
+    ProductLogic,
+    ProductImageLogic,
+    VendorLogic,
+    SettingLogic,
+    BlogLogic,
+    AddressLogic};
 
 class BaseService {
     protected $productTypeLogic;
@@ -19,9 +26,12 @@ class BaseService {
 
     protected $addressLogic;
 
+    protected $contactLogic;
+
     public function __construct(ProductTypeLogic $productTypeLogic, ProductLogic $productLogic,
                                 ProductImageLogic $productImageLogic , VendorLogic $vendorLogic,
-                                SettingLogic $settingLogic, BlogLogic $blogLogic, AddressLogic $addressLogic)
+                                SettingLogic $settingLogic, BlogLogic $blogLogic, AddressLogic $addressLogic,
+                                ContactLogic $contactLogic)
     {
         $this->productTypeLogic = $productTypeLogic;
         $this->productLogic = $productLogic;
@@ -30,5 +40,6 @@ class BaseService {
         $this->settingLogic = $settingLogic;
         $this->blogLogic = $blogLogic;
         $this->addressLogic = $addressLogic;
+        $this->contactLogic = $contactLogic;
     }
 }

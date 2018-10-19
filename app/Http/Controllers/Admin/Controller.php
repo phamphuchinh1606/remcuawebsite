@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Services\ContactService;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -33,9 +34,12 @@ class Controller extends BaseController
 
     protected $addressService;
 
+    protected $contactService;
+
     public function __construct(ProductTypeService $productTypeService, ProductService $productService,
                                 VendorService $vendorService, SettingService $settingService,
-                                BlogService $blogService, AddressService $addressService)
+                                BlogService $blogService, AddressService $addressService,
+                                ContactService $contactService)
     {
         $this->productTypeService = $productTypeService;
         $this->productService = $productService;
@@ -43,6 +47,7 @@ class Controller extends BaseController
         $this->settingService = $settingService;
         $this->blogService = $blogService;
         $this->addressService = $addressService;
+        $this->contactService = $contactService;
     }
 
     protected function viewAdmin($viewName,$arrayData = []){

@@ -1,7 +1,7 @@
 <div class="section-content">
     <div class="fieldset">
 
-        <form id="form_update_location" class="clearfix" accept-charset="UTF-8" method="post">
+
             <input name="selected_customer_shipping_province" type="hidden" value="">
             <input name="selected_customer_shipping_district" type="hidden" value="">
             <input name="selected_customer_shipping_ward" type="hidden" value="">
@@ -10,7 +10,7 @@
             <div class="field field-show-floating-label  field-half ">
                 <div class="field-input-wrapper field-input-wrapper-select">
                     <label class="field-label" for="customer_shipping_province"> Tỉnh / thành  </label>
-                    <select class="field-input" id="customer_shipping_province" name="customer_shipping_province">
+                    <select class="field-input" name="province">
                         <option data-code="null" value="null" selected>  Chọn tỉnh / thành </option>
 
 
@@ -276,31 +276,67 @@
             <div class="field field-show-floating-label  field-half ">
                 <div class="field-input-wrapper field-input-wrapper-select">
                     <label class="field-label" for="customer_shipping_district">Quận / huyện</label>
-                    <select class="field-input" id="customer_shipping_district" name="customer_shipping_district">
-                        <option data-code="null" value="null" selected>Chọn quận / huyện</option>
+                    <select class="field-input" name="district">
+                        <option data-code="null" value="null" selected="">Chọn quận / huyện</option>
+
+                        <option data-code="HC466" value="466">Quận 1</option>
+
+                        <option data-code="HC467" value="467">Quận 2</option>
+
+                        <option data-code="HC468" value="468">Quận 3</option>
+
+                        <option data-code="HC469" value="469">Quận 4</option>
+
+                        <option data-code="HC470" value="470">Quận 5</option>
+
+                        <option data-code="HC471" value="471">Quận 6</option>
+
+                        <option data-code="HC472" value="472">Quận 7</option>
+
+                        <option data-code="HC473" value="473">Quận 8</option>
+
+                        <option data-code="HC474" value="474">Quận 9</option>
+
+                        <option data-code="HC475" value="475">Quận 10</option>
+
+                        <option data-code="HC476" value="476">Quận 11</option>
+
+                        <option data-code="HC477" value="477">Quận 12</option>
+
+                        <option data-code="HC478" value="478">Quận Gò Vấp</option>
+
+                        <option data-code="HC479" value="479">Quận Tân Bình</option>
+
+                        <option data-code="HC480" value="480">Quận Bình Thạnh</option>
+
+                        <option data-code="HC481" value="481">Quận Phú Nhuận</option>
+
+                        <option data-code="HC482" value="482">Quận Thủ Đức</option>
+
+                        <option data-code="HC483" value="483">Huyện Củ Chi</option>
+
+                        <option data-code="HC484" value="484">Huyện Hóc Môn</option>
+
+                        <option data-code="HC485" value="485">Huyện Bình Chánh</option>
+
+                        <option data-code="HC486" value="486">Huyện Nhà Bè</option>
+
+                        <option data-code="HC487" value="487">Huyện Cần Giờ</option>
+
+                        <option data-code="HC679" value="679">Quận Bình Tân</option>
+
+                        <option data-code="HC680" value="680">Quận Tân Phú</option>
 
                     </select>
                 </div>
 
             </div>
-
-
-
-        </form>
-
-    </div>
-    <div class="section-content section-customer-information fieldset" id="div_country_not_vietnam">
-        <div class="field field-two-thirds">
-            <div class="field-input-wrapper">
-                <label class="field-label" for="billing_address_city">Thành phố</label>
-                <input placeholder="Thành phố" autocapitalize="off" spellcheck="false" class="field-input" size="30" type="text" id="billing_address_city" name="billing_address[city]" value="" />
-            </div>
-        </div>
-        <div class="field field-third">
-            <div class="field-input-wrapper">
-                <label class="field-label" for="billing_address_zip">Mã bưu chính</label>
-                <input placeholder="Mã bưu chính" autocapitalize="off" spellcheck="false" class="field-input" size="30" type="text" id="billing_address_zip" name="billing_address[zip]" value="" />
-            </div>
-        </div>
     </div>
 </div>
+
+<script type="text/ecmascript">
+    $(document).ready(function(){
+        $('select[name=province]').val({{$shippingInfo['province']}});
+        $('select[name=district]').val({{$shippingInfo['district']}});
+    });
+</script>

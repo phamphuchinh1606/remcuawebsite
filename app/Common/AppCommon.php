@@ -77,6 +77,32 @@ class AppCommon{
         return $className;
     }
 
+    public static function nameStatusIsRead($statusValue){
+        $statusReadName = "";
+        switch ($statusValue){
+            case Constant::$STATUS_READ_OFF:
+                $statusReadName = Constant::$STATUS_READ_OFF_NAME;
+                break;
+            case Constant::$STATUS_READ_ON:
+                $statusReadName = Constant::$STATUS_READ_ON_NAME;
+                break;
+        }
+        return $statusReadName;
+    }
+
+    public static function classStatusIsRead($statusValue){
+        $className = "";
+        switch ($statusValue){
+            case Constant::$STATUS_READ_OFF:
+                $className = 'badge-danger';
+                break;
+            case Constant::$STATUS_READ_ON:
+                $className = 'badge-dark';
+                break;
+        }
+        return $className;
+    }
+
     public static function moveImage(UploadedFile $file, $pathFolder){
          if(isset($file)){
              $filename = time().'_'.$file->getClientOriginalName();

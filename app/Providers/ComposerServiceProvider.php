@@ -31,6 +31,9 @@ class ComposerServiceProvider extends ServiceProvider
         //Build data app info
         View::composer(['guest.*'],
             'App\Http\ViewComposers\AppInfoComposer');
+
+        View::composer(['admin.layouts.partials.*'],
+            'App\Http\ViewComposers\ContactComposer');
     }
 
     /**

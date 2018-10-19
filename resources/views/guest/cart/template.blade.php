@@ -1,99 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="flexbox">
 <head>
-    <link rel="shortcut icon" href="//theme.hstatic.net/1000244873/1000313408/14/favicon.png?v=1543" type="image/png" />
+    <link rel="shortcut icon" href="{{asset('favicon.png')}}" type="image/png"/>
     <title>
         {{$appInfo->app_name}}
     </title>
 
-
     <meta name="description" content="{{$appInfo->app_name}}" />
 
-    <link href='//hstatic.net/0/0/global/checkouts.css?v=1.1' rel='stylesheet' type='text/css'  media='all'  />
-    <link href='//theme.hstatic.net/1000244873/1000313408/14/check_out.css?v=1543' rel='stylesheet' type='text/css'  media='all'  />
-    <script src='//hstatic.net/0/0/global/jquery.min.js' type='text/javascript'></script>
-    <script src='//hstatic.net/0/0/global/jquery.validate.js' type='text/javascript'></script>
+    <link href="{{asset('/css/guest/plugins/checkouts.css')}}" rel='stylesheet' type='text/css'  media='all'  />
+    <link href="{{asset('/css/guest/plugins/check_out.css')}}" rel='stylesheet' type='text/css'  media='all'  />
+    <script src='{{ asset('/js/guest/plugins/jquery.min.js?v=1543') }}' type='text/javascript'></script>
+    <script src="{{asset('/js/guest/plugins/jquery.validate.js')}}" type='text/javascript'></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=no">
-
-
-    <script src="{{asset('js/guest/cart/cart.js')}}" type='text/javascript'></script>
-
-
-    <script type="text/javascript">
-        var toggleShowOrderSummary = false;
-        $(document).ready(function() {
-            var currentUrl = '';
-
-
-            currentUrl = '/checkouts/3d324ed232954897a0289ad4adc881b0?step=1';
-
-
-            if ($('#reloadValue').val().length == 0)
-            {
-                $('#reloadValue').val(currentUrl);
-                $('body').show();
-            }
-            else
-            {
-                window.location = $('#reloadValue').val();
-                $('#reloadValue').val('');
-            }
-
-            $('body')
-                .on('click', '.order-summary-toggle', function() {
-                    toggleShowOrderSummary = !toggleShowOrderSummary;
-
-                    if(toggleShowOrderSummary) {
-                        $('.order-summary-toggle')
-                            .removeClass('order-summary-toggle-hide')
-                            .addClass('order-summary-toggle-show');
-
-                        $('.sidebar:not(".sidebar-second") .sidebar-content .order-summary')
-                            .removeClass('order-summary-is-collapsed')
-                            .addClass('order-summary-is-expanded');
-
-                        $('.sidebar.sidebar-second .sidebar-content .order-summary')
-                            .removeClass('order-summary-is-expanded')
-                            .addClass('order-summary-is-collapsed');
-                    } else {
-                        $('.order-summary-toggle')
-                            .removeClass('order-summary-toggle-show')
-                            .addClass('order-summary-toggle-hide');
-
-                        $('.sidebar:not(".sidebar-second") .sidebar-content .order-summary')
-                            .removeClass('order-summary-is-expanded')
-                            .addClass('order-summary-is-collapsed');
-
-                        $('.sidebar.sidebar-second .sidebar-content .order-summary')
-                            .removeClass('order-summary-is-collapsed')
-                            .addClass('order-summary-is-expanded');
-                    }
-                });
-        });
-    </script>
-
-    <script type='text/javascript'>
-        //<![CDATA[
-        if ((typeof Haravan) === 'undefined') {
-            Haravan = {};
-        }
-        Haravan.culture = 'vi-VN';
-        Haravan.shop = 'st-fashion.myharavan.com';
-        Haravan.theme = {"name":"ST - Fashion","id":1000313408,"role":"main"};
-        Haravan.domain = 'st-fashion.myharavan.com';
-        //]]>
-    </script>
-    <script type='text/javascript'>
-        window.HaravanAnalytics = window.HaravanAnalytics || {};
-        window.HaravanAnalytics.meta = window.HaravanAnalytics.meta || {};
-        window.HaravanAnalytics.meta.currency = 'VND';
-        var meta = {"page":{"pageType":"checkout","resourceType":"checkout","resourceId":"3d324ed232954897a0289ad4adc881b0"},"cart":{"products":[{"variantId":1019623659,"productId":1009687435,"price":43500000.0,"name":"Áo sơ mi Aristino ASS17-MO57 - M","sku":"STMF-07","vendor":"Aristino","variant":"M","type":"Quần áo","quantity":3}],"item_count":3,"total_price":130500000.0}};
-        for (var attr in meta) {
-            window.HaravanAnalytics.meta[attr] = meta[attr];
-        }
-    </script>
-    <script async src='//hstatic.net/0/0/global/haravan-analytics.min.js?v=3' type='text/javascript'></script>
 
 </head>
 <body>
@@ -134,8 +54,6 @@
                 <div class="sidebar-content">
                     <div class="order-summary">
                         <div class="order-summary-sections">
-
-
                             <div class="order-summary-section order-summary-section-discount" data-order-summary-section="discount">
                                 <form id="form_discount_add" accept-charset="UTF-8" method="post">
                                     <input name="utf8" type="hidden" value="✓">
@@ -156,8 +74,6 @@
                                     </div>
                                 </form>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
@@ -191,48 +107,7 @@
 
                 </div>
                 <div class="main-content">
-
-                    <div class="step">
-                        <div class="step-sections " step="1">
-                            <div class="section">
-                                <div class="section-header">
-                                    <h2 class="section-title">Thông tin giao hàng</h2>
-                                </div>
-                                {{--Section Content Not Login--}}
-                                @include('guest.cart.__section_content_not_login')
-
-                                {{--Section Content Address--}}
-                                @include('guest.cart.__section_content_address')
-
-                                <div id="change_pick_location_or_shipping">
-
-
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="step-footer">
-
-
-                            <form id="form_next_step" accept-charset="UTF-8" method="post">
-                                <input name="utf8" type="hidden" value="✓">
-                                <button type="submit" class="step-footer-continue-btn btn">
-                                    <span class="btn-content">Tiếp tục đến phương thức thanh toán</span>
-                                    <i class="btn-spinner icon icon-button-spinner"></i>
-                                </button>
-                            </form>
-                            <a class="step-footer-previous-link" href="{{route('cart')}}">
-                                <svg class="previous-link-icon icon-chevron icon" width="6.7" height="11.3">
-                                    <path d="M6.7 1.1l-1-1.1-4.6 4.6-1.1 1.1 1.1 1 4.6 4.6 1-1-4.6-4.6z"></path>
-                                </svg>
-                                Giỏ hàng
-                            </a>
-
-
-                        </div>
-                    </div>
-
+                    @yield('cart.content')
                 </div>
                 <div class="main-footer">
 
