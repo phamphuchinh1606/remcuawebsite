@@ -123,7 +123,8 @@ class CartController extends Controller
             'email' => '',
             'address' => '',
             'province' => '',
-            'district' => ''
+            'district' => '',
+            'note' => ''
         );
         if($request != null){
             $attributes = array(
@@ -132,7 +133,8 @@ class CartController extends Controller
                 'email' => $request->email,
                 'address' => $request->address,
                 'province' => $request->province,
-                'district' => $request->district
+                'district' => $request->district,
+                'note' => ''
             );
         }
         $conditionShippingInfo = new CartCondition(array(
@@ -165,11 +167,20 @@ class CartController extends Controller
         return view('guest.cart.check_out_payment');
     }
 
+    private function clearCart(){
+        Cart::clear();
+    }
+
     public function finishCreateCart(Request $request){
         $cartItems = Cart::getContent();
-        $shippingInfo = Cart::getCondition($this->nameCartConditionShipping);
+        $shippingInfo = Cart::getCondition($this->nameCartConditionShipping)->getAttributes();
         if(!$shippingInfo ||!$cartItems){
             return redirect()->route('cart');
         }
+        $totalAmount = Cart::getTotal();
+        $shipmentAmount = 0;
+        $this->orderService->createOrder($cartItems, $shippingInfo, $totalAmount, $shipmentAmount);
+        $this->clearCart();
+        return redirect()->route('cart')->with('message','Chúc mừng bạn đã đặt hàng thành công . Chúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất.');
     }
 }

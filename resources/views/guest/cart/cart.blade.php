@@ -18,6 +18,9 @@
                     <?php $carts =  Cart::getContent()?>
                     @if(!isset($carts) || count($carts) <= 0)
                         <div class="page-content not-item text-center">
+                            @if(\Session::has('message'))
+                                <div class="alert alert-success"> {{ \Session::get('message') }}</div>
+                            @endif
                             <div class="img text-center">
                                 <img src="//theme.hstatic.net/1000244873/1000313408/14/empty_cart.png?v=1543" alt="Không có sản phẩm nào trong giỏ hàng của bạn">
                             </div>

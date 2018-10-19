@@ -3,7 +3,7 @@
 
 @section('cart.content')
     <div class="step">
-        <form id="form_next_step" accept-charset="UTF-8" method="post">
+        <form id="form_next_step" accept-charset="UTF-8" method="post" action="{{route('cart.check_out.finish')}}">
             @csrf
             <div class="step-sections " step="2">
                 <div id="section-shipping-rate" class="section">

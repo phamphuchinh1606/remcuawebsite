@@ -7,11 +7,20 @@ use Illuminate\Http\UploadedFile;
 use Carbon\Carbon;
 
 class AppCommon{
+
+    private static function dateTimeZone(){
+        return new \DateTimeZone("Asia/Ho_Chi_Minh");
+    }
+
+    public static function newDate(){
+        return Carbon::now(self::dateTimeZone());
+    }
+
     public static function createFromFormat($value, $format = "m/d/Y"){
         return Carbon::createFromFormat($format,$value);
     }
 
-    public static function dateFormat($value, $format = "d-M-Y H:i"){
+    public static function dateFormat($value, $format = "d-m-Y H:i"){
         return Carbon::parse($value)->addHours(7)->format($format);
     }
 
@@ -49,6 +58,44 @@ class AppCommon{
             $isPublic = Constant::$PUBLIC_FLG_OFF;
         }
         return $isPublic;
+    }
+
+    public static function namePublicOrderStatus($statusValue){
+        $statusName = "";
+        switch ($statusValue){
+            case Constant::$ORDER_STATUS_NEW_CODE:
+                $statusName = Constant::$ORDER_STATUS_NEW_NAME;
+                break;
+            case Constant::$ORDER_STATUS_CONFIRM_CODE:
+                $statusName = Constant::$ORDER_STATUS_CONFIRM_NAME;
+                break;
+            case Constant::$ORDER_STATUS_SHIPPING_CODE:
+                $statusName = Constant::$ORDER_STATUS_SHIPPING_NAME;
+                break;
+            case Constant::$ORDER_STATUS_FINISH_CODE:
+                $statusName = Constant::$ORDER_STATUS_FINISH_NAME;
+                break;
+        }
+        return $statusName;
+    }
+
+    public static function classPublicOrderStatus($statusValue){
+        $className = "";
+        switch ($statusValue){
+            case Constant::$ORDER_STATUS_NEW_CODE:
+                $className = 'badge-danger';
+                break;
+            case Constant::$ORDER_STATUS_CONFIRM_CODE:
+                $className = 'badge-warning';
+                break;
+            case Constant::$ORDER_STATUS_SHIPPING_CODE:
+                $className = 'badge-primary';
+                break;
+            case Constant::$ORDER_STATUS_FINISH_CODE:
+                $className = 'badge-success';
+                break;
+        }
+        return $className;
     }
 
     public static function namePublicProductType($statusValue){

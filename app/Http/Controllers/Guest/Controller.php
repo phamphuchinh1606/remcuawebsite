@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Guest;
 
 use App\Services\ContactService;
+use App\Services\OrderService;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -30,9 +31,11 @@ class Controller extends BaseController
 
     protected $contactService;
 
+    protected $orderService;
+
     public function __construct(ProductTypeService $productTypeService, ProductService $productService,
                                 VendorService $vendorService, SettingService $settingService,
-                                BlogService $blogService, ContactService $contactService)
+                                BlogService $blogService, ContactService $contactService, OrderService $orderService)
     {
         $this->productTypeService = $productTypeService;
         $this->productService = $productService;
@@ -40,5 +43,6 @@ class Controller extends BaseController
         $this->settingService = $settingService;
         $this->blogService = $blogService;
         $this->contactService = $contactService;
+        $this->orderService = $orderService;
     }
 }

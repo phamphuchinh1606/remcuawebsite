@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOrderAddressesTable extends Migration
+class CreateCustomersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,15 @@ class CreateOrderAddressesTable extends Migration
      */
     public function up()
     {
-        Schema::create('order_addresses', function (Blueprint $table) {
+        Schema::create('customers', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('order_id');
             $table->string('full_name',255)->nullable(true);
+            $table->string('phone',50)->nullable(true);
             $table->string('email',255)->nullable(true);
-            $table->string('phone_number',20)->nullable(true);
             $table->string('address',255)->nullable(true);
-            $table->string('city',100)->nullable(true);
-            $table->string('ward',100)->nullable(true);
-            $table->string('district',100)->nullable(true);
+            $table->integer('province_id')->nullable(true);
+            $table->integer('district_id')->nullable(true);
+            $table->integer('is_delete')->default(0);
             $table->timestamps();
         });
     }
@@ -34,6 +33,6 @@ class CreateOrderAddressesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('order_addresses');
+        Schema::dropIfExists('customers');
     }
 }

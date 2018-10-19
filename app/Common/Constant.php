@@ -35,4 +35,13 @@ class Constant{
     public static $SORT_BY_PRODUCT_TITLE_ASCENDING = 'title-ascending';
     public static $SORT_BY_PRODUCT_TITLE_DESCENDING = 'title-ascending';
     public static $SORT_BY_PRODUCT_BEST_SELLING = 'best-selling';
+
+    public static $ORDER_STATUS_NEW_CODE = '0';
+    public static $ORDER_STATUS_NEW_NAME = 'Chưa xác nhân';
+    public static $ORDER_STATUS_CONFIRM_CODE = '1';
+    public static $ORDER_STATUS_CONFIRM_NAME = 'Đã xác nhận';
+    public static $ORDER_STATUS_SHIPPING_CODE = '2';
+    public static $ORDER_STATUS_SHIPPING_NAME = 'Đang giao hàng';
+    public static $ORDER_STATUS_FINISH_CODE = '3';
+    public static $ORDER_STATUS_FINISH_NAME = 'Đã hoàn thành';
 }

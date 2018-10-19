@@ -127,6 +127,12 @@ class RouteServiceProvider extends ServiceProvider
             ->prefix($this->prefixAdmin)
             ->name($this->prefixAdmin.'.')
             ->group(base_path('routes/admin/route_contact.php'));
+
+        Route::middleware('web')
+            ->namespace($this->namespaceAdmin)
+            ->prefix($this->prefixAdmin)
+            ->name($this->prefixAdmin.'.')
+            ->group(base_path('routes/admin/route_order.php'));
     }
 
     /**

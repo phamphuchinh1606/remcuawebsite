@@ -38,4 +38,8 @@ class TableNameDB{
     public static $TableUser = 'users';
 
     public static $TableVendor = 'vendors';
+
+    public static $TableContact = 'contacts';
+
+    public static $TableCustomer = 'customers';
 }

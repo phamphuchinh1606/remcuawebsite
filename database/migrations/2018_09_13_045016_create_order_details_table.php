@@ -18,10 +18,10 @@ class CreateOrderDetailsTable extends Migration
             $table->integer('order_id');
             $table->integer('product_id');
             $table->bigInteger('product_price');
-            $table->bigInteger('product_compare_price');
+            $table->bigInteger('product_compare_price')->nullable(true);;
             $table->integer('product_qty');
-            $table->string('note',1000)->nullable(false);
-            $table->bigInteger('total_money')->nullable(false);
+            $table->string('note',1000)->nullable(true);
+            $table->bigInteger('total_money')->nullable(true);
             $table->timestamps();
         });
     }

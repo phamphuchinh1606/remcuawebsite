@@ -69,6 +69,12 @@
                     <span class="badge badge-danger">{{$countContact}}</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('admin.order.index')}}">
+                    <i class="nav-icon icon-pencil"></i>
+                    Đơn hàng
+                </a>
+            </li>
         </ul>
         <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
             <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
