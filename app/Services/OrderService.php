@@ -19,7 +19,11 @@ class OrderService extends BaseService{
     }
 
     public function getDetail($orderId){
-
+        $order = $this->orderLogic->getOrderInfo($orderId);
+        $order->status_name = AppCommon::namePublicOrderStatus($order->status_order);
+        $order->status_class = AppCommon::classPublicOrderStatus($order->status_order);
+        $order->orderDetails = $this->orderDetailLogic->getOrderDetailInfo($orderId);
+        return $order;
     }
 
     public function createOrder($cartItems , $shippingInfo, $totalAmount, $shipmentAmount){
@@ -58,6 +62,14 @@ class OrderService extends BaseService{
         }catch (\Exception $ex){
             DB::rollBack();
             throw new \Exception($ex);
+        }
+    }
+
+    public function updateStatusOrder($orderId, $orderStatus){
+        $order = $this->orderLogic->findId($orderId);
+        if($orderStatus != $order->status_order){
+            $order->status_order = $orderStatus;
+            $this->orderLogic->save($order);
         }
     }
 }

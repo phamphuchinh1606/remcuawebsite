@@ -42,4 +42,10 @@ class TableNameDB{
     public static $TableContact = 'contacts';
 
     public static $TableCustomer = 'customers';
+
+    public static $TableProvince = 'provinces';
+
+    public static $TableDistrict = 'districts';
+
+    public static $TableCountry = 'countries';
 }

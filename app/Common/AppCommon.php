@@ -75,6 +75,9 @@ class AppCommon{
             case Constant::$ORDER_STATUS_FINISH_CODE:
                 $statusName = Constant::$ORDER_STATUS_FINISH_NAME;
                 break;
+            case Constant::$ORDER_STATUS_CANCEL_CODE:
+                $statusName = Constant::$ORDER_STATUS_CANCEL_NAME;
+                break;
         }
         return $statusName;
     }
@@ -83,16 +86,19 @@ class AppCommon{
         $className = "";
         switch ($statusValue){
             case Constant::$ORDER_STATUS_NEW_CODE:
-                $className = 'badge-danger';
+                $className = 'badge-secondary';
                 break;
             case Constant::$ORDER_STATUS_CONFIRM_CODE:
-                $className = 'badge-warning';
+                $className = 'badge-primary';
                 break;
             case Constant::$ORDER_STATUS_SHIPPING_CODE:
-                $className = 'badge-primary';
+                $className = 'badge-warning';
                 break;
             case Constant::$ORDER_STATUS_FINISH_CODE:
                 $className = 'badge-success';
+                break;
+            case Constant::$ORDER_STATUS_CANCEL_CODE:
+                $className = 'badge-danger';
                 break;
         }
         return $className;

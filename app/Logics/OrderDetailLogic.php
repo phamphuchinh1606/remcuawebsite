@@ -3,6 +3,7 @@
 namespace App\Logics;
 
 use App\Models\OrderDetail;
+use App\Models\TableNameDB;
 
 class OrderDetailLogic extends BaseLogic{
     public function create($params = []){
@@ -14,5 +15,15 @@ class OrderDetailLogic extends BaseLogic{
         $orderDetail->total_money = $params['totalMoney'];
         $orderDetail->save();
         return $orderDetail;
+    }
+
+    public function getOrderDetailInfo($orderId){
+        $tableOrderDetail = TableNameDB::$TableOrderDetail;
+        $tableProduct = TableNameDB::$TableProduct;
+        $orderDetails = OrderDetail::join($tableProduct.' as product','product.id','=',$tableOrderDetail.'.product_id')
+                        ->where($tableOrderDetail.'.order_id',$orderId)
+                        ->select($tableOrderDetail.'.*','product.product_name')
+                        ->get();
+        return $orderDetails;
     }
 }

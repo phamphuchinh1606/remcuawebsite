@@ -82,5 +82,6 @@
         // });
     </script>
     @include('admin.common.__popup_confirm_delete')
+    @yield('body.popup')
 </body>
 </html>

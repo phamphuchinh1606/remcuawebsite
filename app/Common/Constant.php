@@ -44,4 +44,6 @@ class Constant{
     public static $ORDER_STATUS_SHIPPING_NAME = 'Đang giao hàng';
     public static $ORDER_STATUS_FINISH_CODE = '3';
     public static $ORDER_STATUS_FINISH_NAME = 'Đã hoàn thành';
+    public static $ORDER_STATUS_CANCEL_CODE = '4';
+    public static $ORDER_STATUS_CANCEL_NAME = 'Đã hủy';
 }

@@ -9,6 +9,16 @@ use App\Models\TableNameDB;
 
 class OrderLogic extends BaseLogic{
 
+    public function findId($orderId){
+        return Order::find($orderId);
+    }
+
+    public function save($order){
+        if($order){
+            $order->save();
+        }
+    }
+
     public function getAll($search = [] , $limitPage = 20){
         $tableOrder = TableNameDB::$TableOrder;
         $query = Order::join(TableNameDB::$TableOrderAddress. ' as shipping', $tableOrder.'.id','=','shipping.order_id')
@@ -17,6 +27,19 @@ class OrderLogic extends BaseLogic{
         }
         $orders = $query->paginate($limitPage);
         return $orders;
+    }
+
+    public function getOrderInfo($orderId){
+        $tableOrder = TableNameDB::$TableOrder;
+        $tableProvince = TableNameDB::$TableProvince;
+        $tableDistrict = TableNameDB::$TableDistrict;
+        $order = Order::join(TableNameDB::$TableOrderAddress.' as address',$tableOrder.'.id','=','address.order_id')
+                ->leftjoin($tableProvince.' as province','province.code','=','address.ward')
+                ->leftjoin($tableDistrict.' as district','district.code','=','address.district')
+                ->where($tableOrder.'.id',$orderId)
+                ->select($tableOrder.'.*', 'address.full_name','address.email','address.phone_number','address.address')
+                ->first();
+        return $order;
     }
 
     public function create($params = []){
