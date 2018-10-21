@@ -4,13 +4,13 @@
         <div class="ring-alo-ph-circle"></div>
         <div class="ring-alo-ph-circle-fill"></div>
         <div class="ring-alo-ph-img-circle">
-            <a href="tel:0946673322">
+            <a href="tel:{{$appInfo->app_phone}}">
                 <img class="lazy" src="{{asset('/images/guest/call.png')}}" alt="G">
             </a>
         </div>
     </div>
     <div class="tel">
-        <a href="tel:0946673322"><p class="fone">Bấm để gọi ngay</p></a>
+        <a href="tel:{{$appInfo->app_phone}}"><p class="fone">Bấm để gọi ngay</p></a>
     </div>
 </div>
 

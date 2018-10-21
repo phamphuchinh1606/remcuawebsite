@@ -12,8 +12,8 @@ class AppCommon{
         return new \DateTimeZone("Asia/Ho_Chi_Minh");
     }
 
-    public static function newDate(){
-        return Carbon::now(self::dateTimeZone());
+    public static function newDate($format = "m/d/Y"){
+        return Carbon::now(self::dateTimeZone())->format($format);
     }
 
     public static function createFromFormat($value, $format = "m/d/Y"){

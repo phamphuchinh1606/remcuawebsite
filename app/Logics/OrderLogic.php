@@ -19,11 +19,32 @@ class OrderLogic extends BaseLogic{
         }
     }
 
-    public function getAll($search = [] , $limitPage = 20){
+    public function getAll($searchForm = [] , $limitPage = 20){
         $tableOrder = TableNameDB::$TableOrder;
         $query = Order::join(TableNameDB::$TableOrderAddress. ' as shipping', $tableOrder.'.id','=','shipping.order_id')
                         ->select($tableOrder.'.*', 'shipping.full_name','shipping.email','shipping.phone_number');
-        if(count($search) > 0){
+        if(count($searchForm) > 0){
+            if(isset($searchForm['order_code'])){
+                $query->whereOrderCode($searchForm['order_code']);
+            }
+            if(isset($searchForm['full_name'])){
+                $query->whereRaw("LOWER(shipping.full_name) like '%".strtolower($searchForm['full_name'])."%'");
+            }
+            if(isset($searchForm['phone_number'])){
+                $query->where('shipping.phone_number',$searchForm['phone_number']);
+            }
+            if(isset($searchForm['email'])){
+                $query->where('shipping.email',$searchForm['email']);
+            }
+            if(isset($searchForm['order_date_start'])){
+                $query->whereDate($tableOrder.'.order_date','>=',$searchForm['order_date_start']);
+            }
+            if(isset($searchForm['order_date_end'])){
+                $query->whereDate($tableOrder.'.order_date','<=',$searchForm['order_date_end']);
+            }
+            if(isset($searchForm['order_status'])){
+                $query->whereStatusOrder($searchForm['order_status']);
+            }
         }
         $orders = $query->paginate($limitPage);
         return $orders;

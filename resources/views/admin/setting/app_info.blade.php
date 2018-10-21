@@ -61,6 +61,20 @@
                                                    value="{{$appInfo->app_address}}">
                                         </div>
                                     </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label" for="text-input">Title ChatBox</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" id="app_title_chat_box" type="text" name="app_title_chat_box" placeholder="Tiều đề chat box"
+                                                   value="{{$appInfo->app_title_chat_box}}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label" for="text-input">Link Fanpage</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" id="app_link_facebook_fanpage" type="text" name="app_link_facebook_fanpage" placeholder="Địa chỉ facebook fanpage"
+                                                   value="{{$appInfo->app_link_facebook_fanpage}}">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="card-footer">

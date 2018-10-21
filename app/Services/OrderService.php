@@ -9,8 +9,8 @@ use phpDocumentor\Reflection\DocBlock\Tags\Throws;
 
 class OrderService extends BaseService{
 
-    public function getAll(){
-        $orders = $this->orderLogic->getAll();
+    public function getAll($searchForm){
+        $orders = $this->orderLogic->getAll($searchForm);
         foreach ($orders as $order){
             $order->status_name = AppCommon::namePublicOrderStatus($order->status_order);
             $order->status_class = AppCommon::classPublicOrderStatus($order->status_order);

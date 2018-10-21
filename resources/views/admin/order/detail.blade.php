@@ -22,6 +22,11 @@
                                 <div class="card">
                                     <div class="card-header">
                                         <i class="icon-note"></i> Chi tiết đơn hàng
+                                        <div class="card-header-actions">
+                                            <a class="btn btn-sm btn-secondary" href="{{route('admin.order.index')}}">
+                                                Quay Lại
+                                            </a>
+                                        </div>
                                     </div>
                                     <div class="card-body">
                                         <div class="row">

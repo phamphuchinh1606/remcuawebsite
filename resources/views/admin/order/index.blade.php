@@ -5,11 +5,20 @@
 
 @section('head.css')
     <link href="{{asset('css/admin/plugins/dataTables.bootstrap4.css')}}" rel="stylesheet">
+    <link href="{{asset('css/admin/plugins/daterangepicker.min.css')}}" rel="stylesheet">
 @endsection
 
 @section('body.js')
+    <script type="text/javascript" src="{{asset('js/admin/plugins/moment.min.js')}}" class="view-script"></script>
     <script type="text/javascript" src="{{asset('js/admin/plugins/jquery.dataTables.js')}}" class="view-script"></script>
     <script type="text/javascript" src="{{asset('js/admin/plugins/dataTables.bootstrap4.js')}}" class="view-script"></script>
+    <script type="text/javascript" src="{{asset('js/admin/plugins/daterangepicker.min.js')}}" class="view-script"></script>
+    <script>
+        let startDate = "{{$searchForm['order_date']}}".split("-")[0];
+        let endDate = "{{$searchForm['order_date']}}".split("-")[1];
+        console.log(startDate);
+    </script>
+    <script type="text/javascript" src="{{asset('js/admin/advanced-forms.js')}}" class="view-script"></script>
 @endsection
 
 @section('body.content')
@@ -30,98 +39,7 @@
                             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                 <div class="row">
                                     <div class="collapse col-md-12" id="searchForm" role="tabpanel" style="">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <i class="fa fa-search"></i> Thông tin tìm kiếm đơn hàng
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    <div class="col-md-5">
-                                                        <div class="form-group row">
-                                                            <label class="col-md-3 col-form-label">Mã đơn hàng</label>
-                                                            <div class="col-md-9">
-                                                                <div class="input-group">
-                                                                    <div class="input-group-append">
-                                                                        <span class="input-group-text">
-                                                                        <i class="fa fa-asterisk"></i>
-                                                                        </span>
-                                                                    </div>
-                                                                    <input class="form-control" id="password2" type="password" name="password2">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-md-3 col-form-label">Tên khách hàng</label>
-                                                            <div class="col-md-9">
-                                                                <div class="input-group">
-                                                                    <span class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                    <i class="fa fa-male"></i>
-                                                                    </span>
-                                                                    </span>
-                                                                    <input class="form-control" id="ssn" type="text">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-md-3 col-form-label">Số điện thoại</label>
-                                                            <div class="col-md-9">
-                                                                <div class="input-group">
-                                                                    <span class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                    <i class="fa fa-phone"></i>
-                                                                    </span>
-                                                                    </span>
-                                                                    <input class="form-control" id="phone" type="text">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-1"></div>
-                                                    <div class="col-md-5">
-                                                        <div class="form-group row">
-                                                            <label class="col-md-3 col-form-label">Email</label>
-                                                            <div class="col-md-9">
-                                                                <div class="input-group">
-                                                                    <div class="input-group-append">
-                                                                        <span class="input-group-text">
-                                                                        <i class="fa fa-envelope-o"></i>
-                                                                        </span>
-                                                                    </div>
-                                                                    <input class="form-control" id="input2-group1" type="email" name="input2-group1">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-md-3 col-form-label">Ngày đặt hàng</label>
-                                                            <div class="col-md-9">
-                                                                <div class="input-group">
-                                                                    <span class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                    <i class="fa fa-calendar"></i>
-                                                                    </span>
-                                                                    </span>
-                                                                    <input class="form-control" name="daterange" type="text">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-md-3 col-form-label">Trạng thái</label>
-                                                            <div class="col-md-9">
-                                                                <select class="form-control" id="vendor">
-                                                                    <option value="">Chọn trạng thái</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-footer text-center">
-                                                <button class="btn btn-sm btn-primary p-2">
-                                                    <i class="fa fa-search"></i> Tìm kiếm
-                                                </button>
-                                            </div>
-                                        </div>
+                                        @include('admin.order.partials.__form_search_order',['searchForm' => $searchForm])
                                     </div>
                                 </div>
                                 <div class="row">
@@ -131,6 +49,9 @@
                                             <tr role="row">
                                                 <th>
                                                     STT
+                                                </th>
+                                                <th>
+                                                    Mã đơn hàng
                                                 </th>
                                                 <th>
                                                     Họ và tên
@@ -162,6 +83,9 @@
                                                         {{$index + 1}}
                                                     </td>
                                                     <td>
+                                                        {{$order->order_code}}
+                                                    </td>
+                                                    <td>
                                                         {{$order->full_name}}
                                                     </td>
                                                     <td>
@@ -189,7 +113,7 @@
                                             </tbody>
                                         </table>
                                         <div class="pull-right">
-                                            {{ $orders->links() }}
+                                            {{ $orders->appends($searchForm)->links() }}
                                         </div>
                                     </div>
                                 </div>
@@ -200,4 +124,7 @@
             </div>
         </div>
     </div>
+
+    {{--<div class="daterangepicker ltr show-ranges opensleft" style="display: none; top: 608px;"><div class="ranges"><ul><li data-range-key="Today" class="active">Today</li><li data-range-key="Yesterday">Yesterday</li><li data-range-key="Last 7 Days">Last 7 Days</li><li data-range-key="Last 30 Days">Last 30 Days</li><li data-range-key="This Month">This Month</li><li data-range-key="Last Month">Last Month</li><li data-range-key="Custom Range">Custom Range</li></ul></div><div class="drp-calendar left"><div class="calendar-table"><table class="table-condensed"><thead><tr><th class="prev available"><span></span></th><th colspan="5" class="month">Oct 2018</th><th></th></tr><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td class="weekend off available" data-title="r0c0">30</td><td class="available" data-title="r0c1">1</td><td class="available" data-title="r0c2">2</td><td class="available" data-title="r0c3">3</td><td class="available" data-title="r0c4">4</td><td class="available" data-title="r0c5">5</td><td class="weekend available" data-title="r0c6">6</td></tr><tr><td class="weekend available" data-title="r1c0">7</td><td class="available" data-title="r1c1">8</td><td class="available" data-title="r1c2">9</td><td class="available" data-title="r1c3">10</td><td class="available" data-title="r1c4">11</td><td class="available" data-title="r1c5">12</td><td class="weekend available" data-title="r1c6">13</td></tr><tr><td class="weekend available" data-title="r2c0">14</td><td class="available" data-title="r2c1">15</td><td class="available" data-title="r2c2">16</td><td class="available" data-title="r2c3">17</td><td class="available" data-title="r2c4">18</td><td class="available" data-title="r2c5">19</td><td class="weekend available" data-title="r2c6">20</td></tr><tr><td class="today weekend active start-date active end-date available" data-title="r3c0">21</td><td class="available" data-title="r3c1">22</td><td class="available" data-title="r3c2">23</td><td class="available" data-title="r3c3">24</td><td class="available" data-title="r3c4">25</td><td class="available" data-title="r3c5">26</td><td class="weekend available" data-title="r3c6">27</td></tr><tr><td class="weekend available" data-title="r4c0">28</td><td class="available" data-title="r4c1">29</td><td class="available" data-title="r4c2">30</td><td class="available" data-title="r4c3">31</td><td class="off available" data-title="r4c4">1</td><td class="off available" data-title="r4c5">2</td><td class="weekend off available" data-title="r4c6">3</td></tr><tr><td class="weekend off available" data-title="r5c0">4</td><td class="off available" data-title="r5c1">5</td><td class="off available" data-title="r5c2">6</td><td class="off available" data-title="r5c3">7</td><td class="off available" data-title="r5c4">8</td><td class="off available" data-title="r5c5">9</td><td class="weekend off available" data-title="r5c6">10</td></tr></tbody></table></div><div class="calendar-time" style="display: none;"></div></div><div class="drp-calendar right"><div class="calendar-table"><table class="table-condensed"><thead><tr><th></th><th colspan="5" class="month">Nov 2018</th><th class="next available"><span></span></th></tr><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td class="weekend off available" data-title="r0c0">28</td><td class="off available" data-title="r0c1">29</td><td class="off available" data-title="r0c2">30</td><td class="off available" data-title="r0c3">31</td><td class="available" data-title="r0c4">1</td><td class="available" data-title="r0c5">2</td><td class="weekend available" data-title="r0c6">3</td></tr><tr><td class="weekend available" data-title="r1c0">4</td><td class="available" data-title="r1c1">5</td><td class="available" data-title="r1c2">6</td><td class="available" data-title="r1c3">7</td><td class="available" data-title="r1c4">8</td><td class="available" data-title="r1c5">9</td><td class="weekend available" data-title="r1c6">10</td></tr><tr><td class="weekend available" data-title="r2c0">11</td><td class="available" data-title="r2c1">12</td><td class="available" data-title="r2c2">13</td><td class="available" data-title="r2c3">14</td><td class="available" data-title="r2c4">15</td><td class="available" data-title="r2c5">16</td><td class="weekend available" data-title="r2c6">17</td></tr><tr><td class="weekend available" data-title="r3c0">18</td><td class="available" data-title="r3c1">19</td><td class="available" data-title="r3c2">20</td><td class="available" data-title="r3c3">21</td><td class="available" data-title="r3c4">22</td><td class="available" data-title="r3c5">23</td><td class="weekend available" data-title="r3c6">24</td></tr><tr><td class="weekend available" data-title="r4c0">25</td><td class="available" data-title="r4c1">26</td><td class="available" data-title="r4c2">27</td><td class="available" data-title="r4c3">28</td><td class="available" data-title="r4c4">29</td><td class="available" data-title="r4c5">30</td><td class="weekend off available" data-title="r4c6">1</td></tr><tr><td class="weekend off available" data-title="r5c0">2</td><td class="off available" data-title="r5c1">3</td><td class="off available" data-title="r5c2">4</td><td class="off available" data-title="r5c3">5</td><td class="off available" data-title="r5c4">6</td><td class="off available" data-title="r5c5">7</td><td class="weekend off available" data-title="r5c6">8</td></tr></tbody></table></div><div class="calendar-time" style="display: none;"></div></div><div class="drp-buttons"><span class="drp-selected">10/21/2018 - 10/21/2018</span><button class="cancelBtn btn btn-sm btn-default" type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" type="button">Apply</button> </div></div>--}}
+    {{--<div class="daterangepicker ltr show-ranges opensleft show-calendar" style="display: none;"><div class="ranges"><ul><li data-range-key="Today">Today</li><li data-range-key="Yesterday">Yesterday</li><li data-range-key="Last 7 Days">Last 7 Days</li><li data-range-key="Last 30 Days">Last 30 Days</li><li data-range-key="This Month">This Month</li><li data-range-key="Last Month">Last Month</li><li data-range-key="Custom Range" class="active">Custom Range</li></ul></div><div class="calendar left"><div class="calendar-table"><table class="table-condensed"><thead><tr><th class="prev available"><span></span></th><th colspan="5" class="month">Sep 2018</th><th></th></tr><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td class="weekend off available" data-title="r0c0">26</td><td class="off available" data-title="r0c1">27</td><td class="off available" data-title="r0c2">28</td><td class="off available" data-title="r0c3">29</td><td class="off available" data-title="r0c4">30</td><td class="off available" data-title="r0c5">31</td><td class="weekend available" data-title="r0c6">1</td></tr><tr><td class="weekend available" data-title="r1c0">2</td><td class="available" data-title="r1c1">3</td><td class="available" data-title="r1c2">4</td><td class="available" data-title="r1c3">5</td><td class="available" data-title="r1c4">6</td><td class="available" data-title="r1c5">7</td><td class="weekend available" data-title="r1c6">8</td></tr><tr><td class="weekend available" data-title="r2c0">9</td><td class="available" data-title="r2c1">10</td><td class="available" data-title="r2c2">11</td><td class="available" data-title="r2c3">12</td><td class="available" data-title="r2c4">13</td><td class="available" data-title="r2c5">14</td><td class="weekend available" data-title="r2c6">15</td></tr><tr><td class="weekend available" data-title="r3c0">16</td><td class="available" data-title="r3c1">17</td><td class="available" data-title="r3c2">18</td><td class="available" data-title="r3c3">19</td><td class="available" data-title="r3c4">20</td><td class="active start-date available" data-title="r3c5">21</td><td class="weekend in-range available" data-title="r3c6">22</td></tr><tr><td class="weekend in-range available" data-title="r4c0">23</td><td class="in-range available" data-title="r4c1">24</td><td class="in-range available" data-title="r4c2">25</td><td class="in-range available" data-title="r4c3">26</td><td class="in-range available" data-title="r4c4">27</td><td class="in-range available" data-title="r4c5">28</td><td class="weekend in-range available" data-title="r4c6">29</td></tr><tr><td class="weekend in-range available" data-title="r5c0">30</td><td class="off in-range available" data-title="r5c1">1</td><td class="off in-range available" data-title="r5c2">2</td><td class="off in-range available" data-title="r5c3">3</td><td class="off in-range available" data-title="r5c4">4</td><td class="off in-range available" data-title="r5c5">5</td><td class="weekend off in-range available" data-title="r5c6">6</td></tr></tbody></table></div><div class="calendar-time" style="display: none;"></div></div><div class="calendar right"><div class="calendar-table"><table class="table-condensed"><thead><tr><th></th><th colspan="5" class="month">Oct 2018</th><th class="next available"><span></span></th></tr><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td class="weekend off in-range available" data-title="r0c0">30</td><td class="in-range available" data-title="r0c1">1</td><td class="in-range available" data-title="r0c2">2</td><td class="in-range available" data-title="r0c3">3</td><td class="in-range available" data-title="r0c4">4</td><td class="in-range available" data-title="r0c5">5</td><td class="weekend in-range available" data-title="r0c6">6</td></tr><tr><td class="weekend in-range available" data-title="r1c0">7</td><td class="in-range available" data-title="r1c1">8</td><td class="in-range available" data-title="r1c2">9</td><td class="in-range available" data-title="r1c3">10</td><td class="in-range available" data-title="r1c4">11</td><td class="in-range available" data-title="r1c5">12</td><td class="weekend in-range available" data-title="r1c6">13</td></tr><tr><td class="weekend in-range available" data-title="r2c0">14</td><td class="in-range available" data-title="r2c1">15</td><td class="in-range available" data-title="r2c2">16</td><td class="in-range available" data-title="r2c3">17</td><td class="in-range available" data-title="r2c4">18</td><td class="in-range available" data-title="r2c5">19</td><td class="weekend active end-date in-range available" data-title="r2c6">20</td></tr><tr><td class="today weekend available" data-title="r3c0">21</td><td class="available" data-title="r3c1">22</td><td class="available" data-title="r3c2">23</td><td class="available" data-title="r3c3">24</td><td class="available" data-title="r3c4">25</td><td class="available" data-title="r3c5">26</td><td class="weekend available" data-title="r3c6">27</td></tr><tr><td class="weekend available" data-title="r4c0">28</td><td class="available" data-title="r4c1">29</td><td class="available" data-title="r4c2">30</td><td class="available" data-title="r4c3">31</td><td class="off available" data-title="r4c4">1</td><td class="off available" data-title="r4c5">2</td><td class="weekend off available" data-title="r4c6">3</td></tr><tr><td class="weekend off available" data-title="r5c0">4</td><td class="off available" data-title="r5c1">5</td><td class="off available" data-title="r5c2">6</td><td class="off available" data-title="r5c3">7</td><td class="off available" data-title="r5c4">8</td><td class="off available" data-title="r5c5">9</td><td class="weekend off available" data-title="r5c6">10</td></tr></tbody></table></div><div class="calendar-time" style="display: none;"></div></div><div class="drp-buttons"><span class="drp-selected">2018-09-21 - 2018-10-20</span><button class="cancelBtn btn btn-sm btn-default" type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" type="button">Apply</button> </div></div>--}}
 @endsection

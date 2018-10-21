@@ -20,6 +20,8 @@
     <link href="{{asset('/css/admin/plugins/pace.min.css')}}" rel="stylesheet">
     <link href="{{asset('/css/admin/style.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <script src="{{asset('js/admin/plugins/jquery.min.js')}}"></script>
     @yield('head.css')
     <script>
         (function(i, s, o, g, r, a, m) {
@@ -66,7 +68,7 @@
     {{--Footer--}}
     @include('admin.layouts.partials.__footer')
 
-    <script src="{{asset('js/admin/plugins/jquery.min.js')}}"></script>
+
     <script src="{{asset('js/admin/plugins/popper.min.js')}}"></script>
     <script src="{{asset('js/admin/plugins/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/admin/plugins/pace.min.js')}}"></script>

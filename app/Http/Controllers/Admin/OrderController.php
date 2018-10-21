@@ -2,15 +2,50 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Common\AppCommon;
 use App\Common\Constant;
 use Illuminate\Http\Request;
+use App\Common\DateUtils;
 
 class OrderController extends Controller
 {
-    public function index(){
-        $orders = $this->orderService->getAll();
+    private function getSearchInfo(Request $request){
+        $searchForm = $request->only([
+            'order_code', 'full_name', 'phone_number', 'email' , 'order_date' , 'order_status', 'page'
+        ]);
+        if(count($searchForm) == 0){
+            $firstDayOfPreviousMonth = DateUtils::startOfMonth('m/d/Y');
+            $lastDayOfPreviousMonth = DateUtils::endOfMonth('m/d/Y');
+            $searchForm = array(
+                'order_code' => null,
+                'full_name' => null,
+                'phone_number' => null,
+                'email' => null,
+                'order_date'  => $firstDayOfPreviousMonth . '-' . $lastDayOfPreviousMonth,
+                'order_status' => null
+            );
+        }
+        if(isset($searchForm['order_date'])){
+            $dateArray = explode('-',$searchForm['order_date']);
+            if(count($dateArray) > 0){
+                $searchForm['order_date_start'] = AppCommon::dateFormat($dateArray[0],'Y/m/d') ;
+                $searchForm['order_date_end'] =  AppCommon::dateFormat($dateArray[1],'Y/m/d');
+            }
+        }
+        return $searchForm;
+    }
+
+    public function index(Request $request){
+        $searchForm = $this->getSearchInfo($request);
+        $orders = $this->orderService->getAll($searchForm);
+        foreach ($searchForm as $key => $value){
+            if(null == $searchForm[$key]){
+                $searchForm[$key] = '';
+            }
+        }
         return $this->viewAdmin('order.index',[
-            'orders' => $orders
+            'orders' => $orders,
+            'searchForm' => $searchForm
         ]);
     }
 

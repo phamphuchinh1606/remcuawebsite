@@ -88,6 +88,8 @@ class SettingService extends BaseService{
         $params['appEmail'] = $request->app_email;
         $params['appFacebook'] = $request->app_facebook;
         $params['appAddress'] = $request->app_address;
+        $params['appTitleChatBox'] = $request->app_title_chat_box;
+        $params['appLinkFacebookFanpage'] = $request->app_link_facebook_fanpage;
         $this->settingLogic->updateAppInfo($params);
     }
     //End App Info

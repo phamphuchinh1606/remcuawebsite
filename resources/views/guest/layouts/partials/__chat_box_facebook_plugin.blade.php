@@ -22,10 +22,10 @@
     });
 </script>
 <div id="cfacebook">
-    <a href="javascript:;" class="chat_fb" onClick="return:false;"><i class="fa fa-facebook-square"></i> Chat với LAMWEBSEO</a>
+    <a href="javascript:;" class="chat_fb" onClick="return:false;"><i class="fa fa-facebook-square"></i> {{$appInfo->app_title_chat_box}}</a>
     <div class="fchat">
         <div style="width:250px;" class="fb-page"
-             data-href="/https://www.facebook.com/websitefanpagetest"
+             data-href="/{{$appInfo->app_link_facebook_fanpage}}"
              data-tabs="messages"
              data-width="260"
              data-height="280"
