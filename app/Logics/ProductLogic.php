@@ -18,6 +18,16 @@ class ProductLogic extends BaseLogic{
         return $listProducts;
     }
 
+    public function searchProductByName($productName){
+        $listProducts = Db::table(TableNameDB::$TableProduct.' as product')
+            ->join(TableNameDB::$TableProductType.' as type', 'product.product_type_id','=','type.id')
+            ->where('product.is_delete', Constant::$DELETE_FLG_OFF)
+            ->whereRaw('LOWER(product.product_name) like \'%'.strtolower($productName).'%\'')
+            ->select('product.*', 'type.product_type_name')
+            ->paginate(20);
+        return $listProducts;
+    }
+
     public function getProductNews($limit = 8){
         $listProducts = Db::table(TableNameDB::$TableProduct.' as product')
             ->join(TableNameDB::$TableProductType.' as type', 'product.product_type_id','=','type.id')

@@ -32,10 +32,9 @@
                 </div>
                 <div id="headerSearch" class="col-md-6 col-sm-12 col-xs-12">
                     <div class="frmSearch">
-                        <form id="searchFRM" action="/search">
+                        <form id="searchFRM" action="{{route('search')}}" method="GET">
                             <i class="fa fa-search" aria-hidden="true"></i>
-                            <input type="hidden" name="type" value="product">
-                            <input required="" autocomplete="off" type="text" name="q" id="inputSearchAuto"
+                            <input required="" autocomplete="off" type="text" name="product_name" id="inputSearchAuto"
                                    placeholder="Tìm kiếm...">
                             <button type="submit" class="insButtonk btnSearch">
                                 Tìm kiếm

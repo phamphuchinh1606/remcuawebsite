@@ -13,3 +13,4 @@
 
 
 Route::get('/collection/{id?}','CollectionController@index')->name('collection');
+Route::get('/search','CollectionController@search')->name('search');

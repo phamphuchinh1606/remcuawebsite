@@ -20,4 +20,15 @@ class CollectionController extends Controller
             'sortBy' => $sortBy
         ]);
     }
+
+    public function search(Request $request){
+        $products = [];
+        if(isset($request->product_name)){
+            $products = $this->productService->searchProductByName($request->product_name);
+        }
+        return view('guest.collection.search',[
+            'products' => $products,
+            'product_name' => $request->product_name
+        ]);
+    }
 }

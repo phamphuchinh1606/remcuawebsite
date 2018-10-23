@@ -18,6 +18,15 @@ class ProductService extends BaseService{
         return $listProduct;
     }
 
+    public function searchProductByName($productName){
+        $listProduct = $this->productLogic->searchProductByName($productName);
+        foreach ($listProduct as $product){
+            $product->public_name = AppCommon::namePublicProductType($product->is_public);
+            $product->public_class = AppCommon::classPublicProductType($product->is_public);
+        }
+        return $listProduct;
+    }
+
     public function getProductNews($limit = 8){
         $listProduct = $this->productLogic->getProductNews($limit);
         return $listProduct;

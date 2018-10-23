@@ -7,6 +7,7 @@
     "require": {
         "php": "^7.1.3",
         "darryldecode/cart": "^4.0",
+        "davejamesmiller/laravel-breadcrumbs": "^5.1",
         "fideloper/proxy": "^4.0",
         "galahad/laravel-addressing": "^0.5.1",
         "ixudra/curl": "^6.16",

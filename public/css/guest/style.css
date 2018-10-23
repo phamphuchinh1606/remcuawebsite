@@ -6,3 +6,10 @@
     padding-left: 10px;
     padding-right: 10px;
 }
+
+.searchHead p{
+    margin: 10px 0px;
+    padding: 10px;
+    background: #fff;
+    font-size: 16px;
+}
