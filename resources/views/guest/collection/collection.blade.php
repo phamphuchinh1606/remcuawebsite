@@ -13,7 +13,7 @@
         {{--Breadcrumb--}}
         {{--@include('guest.common.__breadcrumb_show')--}}
 
-        {{ Breadcrumbs::render('collection', $productType) }}
+        {{ Breadcrumbs::render('guest.collection', $productType) }}
 
         <div class="container">
             <div class="main bg_w collection">

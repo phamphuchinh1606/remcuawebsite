@@ -15,21 +15,13 @@
 
 @section('body.content')
     <section id="stSearchPage">
-        <div class="insBreadcrumb">
-            <div class="breadcrumb-wrap">
-                <ol class="breadcrumb breadcrumb-arrow hidden-sm hidden-xs">
-                    <li><a href="/" target="_self">Trang chủ</a></li>
-                    <!--li><a href="/collections" target="_self">Danh mục</a></li-->
-                    <li><a href="http://localhost:8000/blog" target="_self">Tin tức</a></li>
-                    <li class="active"><span> Chọn đồ mùa hè che khuyết điểm cánh tay</span></li>
-                </ol>
-            </div>
-        </div>
+        {{ Breadcrumbs::render('guest.search', 'Tìm kiếm: Kết quả tìm kiếm với ( '.$product_name.' )') }}
+
         <div class="container">
             <div class="searchResults">
                 <div class="searchHead">
                     <p>
-                        Tìm thấy <span> {{count($products)}} kết quả với từ khóa <i>"sdfsdf"</i>...</span>
+                        Tìm thấy <span> {{count($products)}} kết quả với từ khóa <i>"{{$product_name}}"</i>...</span>
                     </p>
                 </div>
                 <ul class="product-list filter products clearfix notStyle pdListItem view_grid">

@@ -57,7 +57,8 @@
 
         {{--Main--}}
         <div class="main">
-            @include('admin.common.__breadcrumb')
+            {{--@include('admin.common.__breadcrumb')--}}
+            @yield('body.breadcrumb')
             @yield('body.content')
         </div>
 

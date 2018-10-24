@@ -9,7 +9,8 @@
 @section('body.content')
     <section id="insBlogPage">
         {{--Breadcrumb--}}
-        @include('guest.common.__breadcrumb_show',['blogDetail' => 'blogDetail'])
+        {{--@include('guest.common.__breadcrumb_show',['blogDetail' => 'blogDetail'])--}}
+        {{ Breadcrumbs::render('guest.blog_detail',$blog) }}
 
         <div class="container">
             <div class="wrapperArticlePage">

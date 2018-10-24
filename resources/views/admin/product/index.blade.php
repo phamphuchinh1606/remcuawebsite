@@ -6,6 +6,11 @@
     <link href="{{asset('css/admin/product.css')}}" rel="stylesheet">
 @endsection
 
+@section('body.breadcrumb')
+
+    {{ Breadcrumbs::render('admin.product') }}
+@endsection
+
 @section('body.content')
     <div class="container-fluid">
         <div id="ui-view">

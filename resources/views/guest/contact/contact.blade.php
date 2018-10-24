@@ -9,7 +9,8 @@
 @section('body.content')
     <section id="insContactPage">
         {{--Breadcrumb--}}
-        @include('guest.common.__breadcrumb_show',['contact' => 'contact'])
+        {{--@include('guest.common.__breadcrumb_show',['contact' => 'contact'])--}}
+        {{ Breadcrumbs::render('guest.contact') }}
 
         <div class="container">
             <div class="wrapperContactPage">

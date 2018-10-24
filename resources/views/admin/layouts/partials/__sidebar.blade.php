@@ -7,44 +7,43 @@
                     <span class="badge badge-info">NEW</span>
                 </a>
             </li>
-            <li class="nav-title">Sản phẩm</li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('admin.product.index')}}">
-                    <i class="nav-icon icon-drop"></i>
+                    <i class="nav-icon icon-layers"></i>
                     Sản phẩm
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('admin.product_type.index')}}">
-                    <i class="nav-icon icon-pencil"></i>
+                    <i class="nav-icon icon-grid"></i>
                     Danh mục sản phẩm
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('admin.vendor.index')}}">
-                    <i class="nav-icon icon-pencil"></i>
+                    <i class="nav-icon icon-badge"></i>
                     Thương hiệu
                 </a>
             </li>
             <li class="nav-item nav-dropdown">
                 <a class="nav-link nav-dropdown-toggle" href="#">
-                    <i class="nav-icon fa fa-code"></i>Cài Đặt</a>
+                    <i class="nav-icon icon-settings"></i>Cài Đặt</a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('admin.setting.banner')}}">
-                            <i class="nav-icon icon-note"></i>
+                            <i class="nav-icon icon-picture"></i>
                             Banner Slider
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('admin.setting.topBanner')}}">
-                            <i class="nav-icon icon-note"></i>
+                            <i class="nav-icon icon-map"></i>
                             Top Banner
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('admin.setting.tag')}}">
-                            <i class="nav-icon icon-note"></i>
+                            <i class="nav-icon icon-tag"></i>
                             Tags Key
                         </a>
                     </li>
@@ -58,20 +57,20 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('admin.blog.index')}}">
-                    <i class="nav-icon icon-pencil"></i>
+                    <i class="nav-icon icon-calendar"></i>
                     Tin Tức
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('admin.contact.index')}}">
-                    <i class="nav-icon icon-bell"></i>
+                    <i class="nav-icon icon-envelope-open"></i>
                     Liên Hệ
                     <span class="badge badge-danger">{{$countContact}}</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('admin.order.index')}}">
-                    <i class="nav-icon icon-pencil"></i>
+                    <i class="nav-icon icon-basket"></i>
                     Đơn hàng
                 </a>
             </li>

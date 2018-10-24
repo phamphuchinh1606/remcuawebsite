@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('/admin','HomeController@index')->name('home');
+
 Route::get('/setting/banner','SettingController@bannerList')->name('setting.banner');
 Route::post('setting/banner/create','SettingController@bannerCreate')->name('setting.banner.create');
 Route::delete('setting/banner/delete/{id}','SettingController@bannerDestroy')->name('setting.banner.delete');

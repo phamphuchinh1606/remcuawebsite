@@ -32,7 +32,8 @@
 @section('body.content')
     <section id="insProductPage" class="tamplateSection">
         {{--Breadcrumb--}}
-        @include('guest.common.__breadcrumb_show')
+        {{--@include('guest.common.__breadcrumb_show')--}}
+        {{ Breadcrumbs::render('guest.product_detail', $product) }}
 
         <div class="container">
             <div class="wrapperPdPage">

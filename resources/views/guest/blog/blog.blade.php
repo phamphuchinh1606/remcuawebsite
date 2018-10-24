@@ -10,7 +10,8 @@
 
     <section id="insBlogPage">
         {{--Breadcrumb--}}
-        @include('guest.common.__breadcrumb_show',['blog' => 'blog'])
+        {{--@include('guest.common.__breadcrumb_show',['blog' => 'blog'])--}}
+        {{ Breadcrumbs::render('guest.blog') }}
 
         <div class="container">
             <div class="wrapperBlogPage">

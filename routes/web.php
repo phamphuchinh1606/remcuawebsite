@@ -11,13 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/admin','Admin\HomeController@index');
-
-
 
 Route::group(['prefix' => 'galahad/addressing'], function () {
     Route::get('/{country}/administrative-areas', [
