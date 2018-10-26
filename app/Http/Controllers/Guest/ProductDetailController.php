@@ -8,7 +8,7 @@ use StdClass;
 
 class ProductDetailController extends Controller
 {
-    public function index($id = 1){
+    public function index($slug = null, $id = 1){
         $product = $this->productService->getInfoProduct($id);
         $productHots = $this->productService->getListProductHot(4);
         $productSameTypes = new StdClass();
@@ -22,7 +22,7 @@ class ProductDetailController extends Controller
         ]);
     }
 
-    public function quickViewProduct($id){
+    public function quickViewProduct($slug = null,$id){
         $product = $this->productService->getInfoProduct($id);
         return response()->json($this->parseProductJson($product));
     }

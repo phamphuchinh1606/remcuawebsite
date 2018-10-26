@@ -85,6 +85,10 @@ class RouteServiceProvider extends ServiceProvider
             ->namespace($this->namespaceGuest)
             ->group(base_path('routes/guest/route_contact.php'));
 
+        Route::middleware('web')
+            ->namespace($this->namespaceGuest)
+            ->group(base_path('routes/guest/route_about.php'));
+
         //Router admin
         Route::middleware('web')
             ->namespace($this->namespaceAdmin)

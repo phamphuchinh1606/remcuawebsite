@@ -50,7 +50,7 @@ class SettingLogic extends BaseLogic{
     public function getTagByTagType($tagTypeId){
         return SettingTag::join(TableNameDB::$TableProductType.' as productType','productType.id','=','setting_tags.product_type_id')
             ->where('tag_type',$tagTypeId)->orderBy('sort_number','asc')
-            ->select('setting_tags.*','productType.product_type_name')->get();
+            ->select('setting_tags.*','productType.product_type_name', 'productType.slug')->get();
     }
 
     public function createTag($tagType = 1, $productTypeId, $tagName, $sortNumber){
@@ -91,6 +91,9 @@ class SettingLogic extends BaseLogic{
                 $appInfo->app_address = $params['appAddress'];
                 $appInfo->app_title_chat_box = $params['appTitleChatBox'];
                 $appInfo->app_link_facebook_fanpage = $params['appLinkFacebookFanpage'];
+                if(isset($params['imageIcon'])){
+                    $appInfo->app_src_icon = $params['imageIcon'];
+                }
                 $appInfo->save();
             }
         }

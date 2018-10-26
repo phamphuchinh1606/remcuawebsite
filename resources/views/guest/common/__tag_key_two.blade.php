@@ -3,7 +3,7 @@
     <ul class="list notStyle clearfix">
         @foreach($tagListTwo as $tag)
             <li>
-                <a href="{{route('collection')}}">{{$tag->tag_name}}</a>
+                <a href="{{route('collection',['id' => $tag->product_type_id])}}">{{$tag->tag_name}}</a>
             </li>
         @endforeach
     </ul>

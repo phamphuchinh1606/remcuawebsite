@@ -33,7 +33,7 @@
                             <div class="collection_head relative">
                                 <div class="page_head">
                                     <h1 class="collection_title ins_title">
-                                        Ví Khắc Tên Cao Cấp
+                                        {{$productType->product_type_name}}
                                     </h1>
                                 </div>
                                 <div class="fil_mobile visible-xs">
@@ -66,25 +66,35 @@
 
                             </div>
                             <!-- PRODUCT LIST -->
-                            <div id="pd_collection" style="display: block;">
-                                <ul class="product-list filter products clearfix notStyle pdListItem view_grid">
-                                    @foreach($products as $product)
-                                        <li class="itemProduct col-md-4 col-sm-6 col-xs-6">
-                                            @include('guest.common.__product_show_item',['product' => $product])
-                                        </li>
-                                    @endforeach
-                                </ul>
+                            @if(count($products) > 0)
+                                <div id="pd_collection" style="display: block;">
+                                    <ul class="product-list filter products clearfix notStyle pdListItem view_grid">
+                                        @foreach($products as $product)
+                                            <li class="itemProduct col-md-4 col-sm-6 col-xs-6">
+                                                @include('guest.common.__product_show_item',['product' => $product])
+                                            </li>
+                                        @endforeach
+                                    </ul>
 
+                                    <div class="clearfix"></div>
+                                    <div class="col-md-12 content_sortPagiBar pagi">
+                                        <div id="pagination" class="clearfix">
 
-                                <div class="clearfix"></div>
-                                <div class="col-md-12 content_sortPagiBar pagi">
-                                    <div id="pagination" class="clearfix">
+                                            {{$products->links('both.common.view_pagging')}}
+                                        </div>
+                                    </div>
 
-                                        {{$products->links('both.common.view_pagging')}}
+                                </div>
+                            @else
+                                <div id="pd_collection">
+                                    <div class="text-center">
+                                        <p class="dataEmpty">
+                                            Chưa có sản phẩm nào trong danh mục này...
+                                        </p>
                                     </div>
                                 </div>
+                            @endif
 
-                            </div>
                         </div>
                     </div>
                 </div>

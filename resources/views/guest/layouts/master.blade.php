@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <head>
-        <link rel="shortcut icon" href="./css/favicon.png?v=1543" type="image/png"/>
+        <link rel="shortcut icon" href="{{asset('/images/faco_icon.png')}}" type="image/png"/>
         <meta charset="utf-8"/>
         <!--[if IE]>
         <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'/>
@@ -13,7 +13,7 @@
         </title>
 
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=0' name='viewport'/>
-        <link rel="canonical" href="https://st-fashion.myharavan.com/"/>
+        <link rel="canonical" href="{{URL::to('/')}}"/>
 
         <script type='text/javascript'>
             //<![CDATA[
@@ -21,9 +21,9 @@
                 Haravan = {};
             }
             Haravan.culture = 'vi-VN';
-            Haravan.shop = 'st-fashion.myharavan.com';
-            Haravan.theme = {"name": "ST - Fashion", "id": 1000313408, "role": "main"};
-            Haravan.domain = 'st-fashion.myharavan.com';
+            Haravan.shop = 'remmangcuaphuonganh.com';
+            Haravan.theme = {"name": "Rem mang cua", "id": 1000313408, "role": "main"};
+            Haravan.domain = 'remmangcuaphuonganh.com';
             //]]>
         </script>
         <script type='text/javascript'>
@@ -54,12 +54,12 @@
         <meta property="og:type" content="website"/>
         <meta property="og:title" content="ST Fashion"/>
         <meta property="og:image"
-              content="http:https://theme.hstatic.net/1000244873/1000313408/14/share_fb_home.png?v=1543"/>
+              content="{{asset('/images/guest/share_fb_home.png')}}"/>
         <meta property="og:image"
-              content="https:https://theme.hstatic.net/1000244873/1000313408/14/share_fb_home.png?v=1543"/>
+              content="{{asset('/images/guest/share_fb_home.png')}}"/>
 
 
-        <meta property="og:url" content="https://st-fashion.myharavan.com/"/>
+        <meta property="og:url" content="{{URL::to('/')}}"/>
         <meta property="og:site_name" content="ST Fashion"/>
 
 

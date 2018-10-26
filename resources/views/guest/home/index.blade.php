@@ -56,5 +56,5 @@
     @include('guest.home.partials.__blog_new')
 
     {{--Home Brands--}}
-    @include('guest.home.partials.__brand')
+    {{--@include('guest.home.partials.__brand')--}}
 @endsection

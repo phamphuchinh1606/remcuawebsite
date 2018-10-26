@@ -19,7 +19,7 @@
                             <div class="insArticleLoop">
                                 <div class="articlePostBody bg_w">
                                     <div class="postThumbIMG relative imageHover">
-                                        <a href="{{route('blog.detail',['id' => $blog->id])}}">
+                                        <a href="{{route('blog.detail',['slug' => isset($blog->slug) ? $blog->slug : '1', 'id' => $blog->id])}}">
                                             <img src="{{asset(Constant::$PATH_URL_UPLOAD_IMAGE.$blog->blog_image)}}" style="height:371px"
                                                  alt="{{$blog->blog_title}}">
                                         </a>
@@ -39,11 +39,11 @@
                                     <div class="postDetail">
                                         <div class="detail clearfix">
                                             <h3>
-                                                <a href="{{route('blog.detail',['id' => $blog->id])}}"
+                                                <a href="{{route('blog.detail',['slug' => isset($blog->slug) ? $blog->slug : '1', 'id' => $blog->id])}}"
                                                    title="{{$blog->blog_title}}">{{$blog->blog_title}}</a>
                                             </h3>
                                             <p>{{$blog->dot_blog_description}}</p>
-                                            <a href="{{route('blog.detail',['id' => $blog->id])}}"
+                                            <a href="{{route('blog.detail',['slug' => isset($blog->slug) ? $blog->slug : '1', 'id' => $blog->id])}}"
                                                class="view" title="Xem thêm">Xem thêm <i
                                                         class="fa fa-angle-double-right" aria-hidden="true"></i></a>
                                         </div>

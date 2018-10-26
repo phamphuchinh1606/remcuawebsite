@@ -150,6 +150,7 @@ return [
         Galahad\LaravelAddressing\ServiceProvider::class,
         Ixudra\Curl\CurlServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        Cviebrock\EloquentSluggable\ServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -217,6 +218,7 @@ return [
         'Addressing' => Galahad\LaravelAddressing\AddressFacade::class,
         'Curl' => Ixudra\Curl\Facades\Curl::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Slug' => Cviebrock\EloquentSluggable\Services\SlugService::class,
     ],
 
 ];

@@ -12,13 +12,13 @@
 
                     <p>
                         <a href="/">
-                            <img src="https://theme.hstatic.net/1000244873/1000313408/14/logo.png?v=1543"
-                                    alt="ST Fashion"/>
+                            <img src="{{asset($appInfo->app_src_icon)}}"
+                                    alt="{{$appInfo->app_name}}"/>
                         </a>
                     </p>
 
                     <h1 class="hide">
-                        ST Fashion
+                        {{$appInfo->app_name}}
                     </h1>
 
                     <div class="visible-xs visible-sm mbCart translateY-50">
@@ -49,7 +49,7 @@
 
                     <ul class="searchEx notStyle">
                         <li class="title"><strong>Gợi ý từ khóa:</strong></li>
-                        <li><span>Thời trang nam, thời trang nữ...</span></li>
+                        <li><span>Rèm màng cửa phương anh, rèm cửa ...</span></li>
                     </ul>
 
                 </div>
@@ -57,6 +57,10 @@
                 <div id="headerUser" class="col-md-3 hidden-sm hidden-xs">
                     <div class="wrap cleafix">
                         <div class="row">
+                            <div class="userBox colItem">
+                                <div class="col-md-4">
+                                </div>
+                            </div>
 
                             <div class="userBox colItem">
                                 <div class="col-md-4">
@@ -66,30 +70,29 @@
                                                 <i class="fa fa-globe" aria-hidden="true"></i>
                                             </div>
                                             <div class="text">
-                                                <span>Cửa hàng</span>
+                                                <span>Liên hện</span>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                             </div>
 
+                            {{--<div class="col-md-4 colItem">--}}
+                                {{--<div class="userBox">--}}
+                                    {{--<a href="/account">--}}
+                                        {{--<div class="box">--}}
+                                            {{--<div class="icon">--}}
+                                                {{--<i class="fa fa-user-circle-o" aria-hidden="true"></i>--}}
+                                            {{--</div>--}}
+                                            {{--<div class="text">--}}
 
-                            <div class="col-md-4 colItem">
-                                <div class="userBox">
-                                    <a href="/account">
-                                        <div class="box">
-                                            <div class="icon">
-                                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                                            </div>
-                                            <div class="text">
+                                                {{--<span>Tài khoản</span>--}}
 
-                                                <span>Tài khoản</span>
-
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</a>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
 
                             <div class="col-md-4 colItem">
                                 <div class="userBox">

@@ -11,5 +11,5 @@
 |
 */
 
-Route::get('/product-detail-json/quick-view/{id}','ProductDetailController@quickViewProduct')->name('product.quick_view');
-Route::get('/product-detail/{id}','ProductDetailController@index')->name('product_detail');
+Route::get('/product-detail-json/quick-view/{slug?}_{id}','ProductDetailController@quickViewProduct')->name('product.quick_view');
+Route::get('/product-detail/{slug?}_{id}','ProductDetailController@index')->name('product_detail');

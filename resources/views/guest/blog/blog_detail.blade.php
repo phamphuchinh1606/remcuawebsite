@@ -24,7 +24,7 @@
                                     </h1>
                                     <div class="info_edu">
                                         <ul>
-                                            <li><i class="fa fa-book" aria-hidden="true"></i> ST Fashion</li>
+                                            <li><i class="fa fa-book" aria-hidden="true"></i> Rèm cửa</li>
                                             <li><i class="fa fa-tags" aria-hidden="true"></i> <a href="Tin tức">Tin tức</a></li>
                                             <li><i class="fa fa-calendar" aria-hidden="true"></i> {{$blog->str_post_date}}</li>
                                         </ul>

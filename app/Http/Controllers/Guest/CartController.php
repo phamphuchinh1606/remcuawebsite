@@ -64,7 +64,8 @@ class CartController extends Controller
                 'price' => $product->product_price,
                 'quantity' => $qty,
                 'attributes' => array(
-                    'image' => asset(Constant::$PATH_URL_UPLOAD_IMAGE.$product->product_image)
+                    'image' => asset(Constant::$PATH_URL_UPLOAD_IMAGE.$product->product_image),
+                    'slug' => $product->slug
                 )
             );
             return $data;

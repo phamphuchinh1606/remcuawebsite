@@ -8,10 +8,10 @@
                     <div class="content">
                         <div class="ftLogo">
                             <div class="fi-title1 insScroll">
-                                <a href="https://st-fashion.myharavan.com" title="ST Fashion">
+                                <a href="{{route('home')}}" title="{{$appInfo->app_src_icon}}">
                                     <img class="insImageload"
                                         data-load="true"
-                                        src="https://theme.hstatic.net/1000244873/1000313408/14/logo_ft.png?v=1543"
+                                        src="{{asset($appInfo->app_src_icon)}}"
                                         alt="ST Fashion"
                                         itemprop="logo">
                                 </a>
@@ -37,22 +37,19 @@
                             <ul class="s-mn-fot notStyle">
 
 
-                                <li><a href="/">Trang chủ</a></li>
+                                <li><a href="{{route('home')}}">Trang chủ</a></li>
 
 
                                 <li><a href="/collections/all">Sản phẩm</a></li>
 
 
-                                <li><a href="/blogs/news">Tin tức</a></li>
+                                <li><a href="{{route('blog')}}">Tin tức</a></li>
 
 
-                                <li><a href="/pages/about-us">Giới thiệu</a></li>
+                                <li><a href="{{route('about')}}">Giới thiệu</a></li>
 
 
-                                <li><a href="/pages/">Hướng dẫn</a></li>
-
-
-                                <li><a href="/pages/lien-he">Liên hệ</a></li>
+                                <li><a href="{{route('contact')}}">Liên hệ</a></li>
 
 
                             </ul>
@@ -67,25 +64,19 @@
                             <ul class="s-mn-fot notStyle">
 
 
-                                <li><a href="/">Trang chủ</a></li>
+                                <li><a href="{{route('home')}}">Trang chủ</a></li>
 
 
                                 <li><a href="/collections/all">Sản phẩm</a></li>
 
 
-                                <li><a href="/collections/thoi-trang">Hot deal</a></li>
+                                <li><a href="{{route('blog')}}">Tin tức</a></li>
 
 
-                                <li><a href="/blogs/news">Tin tức</a></li>
+                                <li><a href="{{route('about')}}">Giới thiệu</a></li>
 
 
-                                <li><a href="/pages/about-us">Giới thiệu</a></li>
-
-
-                                <li><a href="/pages/">Hướng dẫn</a></li>
-
-
-                                <li><a href="/pages/lien-he">Liên hệ</a></li>
+                                <li><a href="{{route('contact')}}">Liên hệ</a></li>
 
 
                             </ul>

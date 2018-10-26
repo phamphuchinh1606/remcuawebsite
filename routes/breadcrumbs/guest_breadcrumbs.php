@@ -44,3 +44,10 @@ Breadcrumbs::register('guest.contact', function ($trail) {
     $trail->push('Liên hệ');
 
 });
+
+//About
+Breadcrumbs::register('guest.about', function ($trail) {
+    $trail->parent('guest.home');
+    $trail->push('Giới thiệu');
+
+});

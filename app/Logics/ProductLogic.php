@@ -6,6 +6,7 @@ use App\Common\Constant;
 use App\Models\Product;
 use DB;
 use App\Models\TableNameDB;
+use Slug;
 
 class ProductLogic extends BaseLogic{
 
@@ -81,6 +82,9 @@ class ProductLogic extends BaseLogic{
             $product->product_qty = 0;
             $product->product_description = $params['productDescription'];
             $product->product_content = $params['productContent'];
+            if(isset($params['productName'])){
+                $product->slug = Slug::createSlug(Product::class,'slug',$params['productName']);
+            }
             $product->save();
             return $product;
         }
@@ -109,6 +113,9 @@ class ProductLogic extends BaseLogic{
                 $product->product_content = $params['productContent'];
                 if(isset($params['productImage'])){
                     $product->product_image = $params['productImage'];
+                }
+                if(isset($params['productName'])){
+                    $product->slug = Slug::createSlug(Product::class,'slug',$params['productName']);
                 }
                 $product->save();
             }

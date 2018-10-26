@@ -4,6 +4,7 @@ namespace App\Logics;
 
 use App\Common\Constant;
 use App\Models\ProductType;
+use Slug;
 
 class ProductTypeLogic extends BaseLogic{
     public function getAll(){
@@ -28,6 +29,9 @@ class ProductTypeLogic extends BaseLogic{
         if($imageIcon != null){
             $productType->image_icon = $imageIcon;
         }
+        if(isset($productTypeName)){
+            $productType->slug = Slug::createSlug(ProductType::class,'slug',$productTypeName);
+        }
         return $productType->save();
     }
 
@@ -36,6 +40,9 @@ class ProductTypeLogic extends BaseLogic{
         $productType->product_type_name = $productTypeName;
         $productType->is_public = $isPublic;
         $productType->parent_id = $productTypeId;
+        if(isset($productTypeName)){
+            $productType->slug = Slug::createSlug(ProductType::class,'slug',$productTypeName);
+        }
         return $productType->save();
     }
 
@@ -46,6 +53,9 @@ class ProductTypeLogic extends BaseLogic{
             $productType->is_public = $isPublic;
             if($imageIcon != null){
                 $productType->image_icon = $imageIcon;
+            }
+            if(isset($productTypeName)){
+                $productType->slug = Slug::createSlug(ProductType::class,'slug',$productTypeName);
             }
             $productType->save();
         }

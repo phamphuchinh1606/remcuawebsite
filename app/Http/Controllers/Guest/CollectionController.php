@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 
 class CollectionController extends Controller
 {
-    public function index($id = null, Request $request){
-        $productType = null;
+    public function index($slug = null, $id = null, Request $request){
+        $productType = new \stdClass();
+        $productType->id = 1;
+        $productType->product_type_name = "Tất cả sản phẩm";
         if($id != null){
             $productType = $this->productTypeService->findId($id);
         }
@@ -19,6 +21,7 @@ class CollectionController extends Controller
             'productType' => $productType,
             'sortBy' => $sortBy
         ]);
+
     }
 
     public function search(Request $request){

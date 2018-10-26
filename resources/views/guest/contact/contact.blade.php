@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="ggMap">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3073412298813!2d106.65401811422637!3d10.787756192313843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ecbca1d78d1%3A0xba79696ed207d8fa!2zNTYgVsOibiBDw7RpLCA3LCBUw6JuIELDrG5oLCBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1500977912224" width="600" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.212400287413!2d106.64223331523728!3d10.795037992308936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175294c57b529c9%3A0xce37e7f69a4eb862!2zNjAvMzAgxJDhu5NuZyDEkGVuLCBQaMaw4budbmcgMTMsIFTDom4gQsOsbmgsIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1540548854178" width="800" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
 
                 <div class="contactList">

@@ -5,12 +5,12 @@
             @foreach($blogNews as $blog)
                 <li class="newItem">
                     <div class="wrap clearfix">
-                        <a href="{{route('blog.detail',['id' => $blog->id])}}">
+                        <a href="{{route('blog.detail',['slug' => isset($blog->slug) ? $blog->slug : '1', 'id' => $blog->id])}}">
                             <img src="{{asset(Constant::$PATH_URL_UPLOAD_IMAGE.$blog->blog_image)}}" alt="{{$blog->blog_title}}">
                         </a>
                         <div class="lat_news_right_con">
                             <h3>
-                                <a href="{{route('blog.detail',['id' => $blog->id])}}">{{$blog->dot_blog_title}}</a>
+                                <a href="{{route('blog.detail',['slug' => isset($blog->slug) ? $blog->slug : '1', 'id' => $blog->id])}}">{{$blog->dot_blog_title}}</a>
                             </h3>
                             <h4>{{$blog->str_post_date}}</h4>
                         </div>

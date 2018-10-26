@@ -22,7 +22,7 @@
                                 <div class="alert alert-success"> {{ \Session::get('message') }}</div>
                             @endif
                             <div class="img text-center">
-                                <img src="//theme.hstatic.net/1000244873/1000313408/14/empty_cart.png?v=1543" alt="Không có sản phẩm nào trong giỏ hàng của bạn">
+                                <img src="{{asset('images/guest/empty_cart.png')}}" alt="Không có sản phẩm nào trong giỏ hàng của bạn">
                             </div>
                             <p>
                                 Không có sản phẩm nào trong giỏ hàng của bạn
@@ -71,18 +71,20 @@
                                         <?php $carts =  Cart::getContent()?>
                                         @if(isset($carts))
                                             @foreach($carts as $cart)
-                                                <?php $image = $cart->attributes->has('image') ? $cart->attributes['image'] : ''; ?>
+                                                <?php
+                                                    $image = $cart->attributes->has('image') ? $cart->attributes['image'] : '';
+                                                    $slug = $cart->attributes->has('slug') ? $cart->attributes['slug'] : '1'?>
                                                 <div class="list_product_cart clearfix" data-id="1019623662">
                                                     <div class="cpro_item image col-xs-3 col-sm-2 col-md-2">
                                                         <div class="cpro_item_inner">
-                                                            <a href="{{route('product_detail',['id' => $cart->id])}}" class="cart__image">
+                                                            <a href="{{route('product_detail',['slug' => $slug, 'id' => $cart->id])}}" class="cart__image">
                                                                 <img class="img-responsive" src="{{$image}}" alt="{{$cart->name}}">
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="cpro_item text-left title col-xs-9 col-sm-3 col-md-3">
                                                         <div class="cpro_item_inner">
-                                                            <a href="{{route('product_detail',['id' => $cart->id])}}" class="product_name">
+                                                            <a href="{{route('product_detail',['slug' => $slug, 'id' => $cart->id])}}" class="product_name">
                                                                 {{$cart->name}}
                                                             </a>
                                                         </div>
@@ -143,30 +145,30 @@
                                         </div>
 
 
-                                        <div class="pd_saler">
-                                            <h3>Dịch vụ &amp; Khuyến mãi</h3>
+                                        {{--<div class="pd_saler">--}}
+                                            {{--<h3>Dịch vụ &amp; Khuyến mãi</h3>--}}
 
-                                            <p>
-                                                Nhập mã ECQLJKY7QROS khi thanh toán, giảm ngay 50.000đ.
-                                            </p>
-
-
-                                            <p>
-                                                Tặng mã coupon giảm 500.000đ khi đơn hàng trên 10 triệu đồng.
-                                            </p>
+                                            {{--<p>--}}
+                                                {{--Nhập mã ECQLJKY7QROS khi thanh toán, giảm ngay 50.000đ.--}}
+                                            {{--</p>--}}
 
 
-                                            <p>
-                                                Giao hàng miễn phí trong nội thành Tp. Hồ Chí Minh
-                                            </p>
+                                            {{--<p>--}}
+                                                {{--Tặng mã coupon giảm 500.000đ khi đơn hàng trên 10 triệu đồng.--}}
+                                            {{--</p>--}}
 
 
-                                            <p>
-                                                Giảm ngay 20% đối với những sản phẩm thuộc nhóm Oppo
-                                            </p>
+                                            {{--<p>--}}
+                                                {{--Giao hàng miễn phí trong nội thành Tp. Hồ Chí Minh--}}
+                                            {{--</p>--}}
 
 
-                                        </div>
+                                            {{--<p>--}}
+                                                {{--Giảm ngay 20% đối với những sản phẩm thuộc nhóm Oppo--}}
+                                            {{--</p>--}}
+
+
+                                        {{--</div>--}}
 
                                     </div>
                                 </div>

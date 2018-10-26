@@ -13,3 +13,7 @@
     background: #fff;
     font-size: 16px;
 }
+
+.stMain{
+    min-height: 500px;
+}

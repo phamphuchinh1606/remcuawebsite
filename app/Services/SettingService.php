@@ -4,8 +4,10 @@ namespace App\Services;
 
 use App\Common\AppCommon;
 use App\Common\Constant;
+use App\Common\ImageCommon;
 use App\Models\SettingAppInfo;
 use Illuminate\Http\Request;
+use DB;
 
 class SettingService extends BaseService{
 
@@ -81,16 +83,29 @@ class SettingService extends BaseService{
     }
 
     public function updateAppInfo(Request $request){
-        $params['appId'] = $request->app_id;
-        $params['appName'] = $request->app_name;
-        $params['appPhone'] = $request->app_phone;
-        $params['appFax'] = $request->app_fax;
-        $params['appEmail'] = $request->app_email;
-        $params['appFacebook'] = $request->app_facebook;
-        $params['appAddress'] = $request->app_address;
-        $params['appTitleChatBox'] = $request->app_title_chat_box;
-        $params['appLinkFacebookFanpage'] = $request->app_link_facebook_fanpage;
-        $this->settingLogic->updateAppInfo($params);
+        try{
+            DB::beginTransaction();
+            $params['appId'] = $request->app_id;
+            $params['appName'] = $request->app_name;
+            $params['appPhone'] = $request->app_phone;
+            $params['appFax'] = $request->app_fax;
+            $params['appEmail'] = $request->app_email;
+            $params['appFacebook'] = $request->app_facebook;
+            $params['appAddress'] = $request->app_address;
+            $params['appTitleChatBox'] = $request->app_title_chat_box;
+            $params['appLinkFacebookFanpage'] = $request->app_link_facebook_fanpage;
+            if(isset($request->app_icon)){
+                if(isset($request->app_src_icon)){
+                    ImageCommon::deleteImageLogo($request->app_src_icon);
+                }
+                $params['imageIcon'] = ImageCommon::moveImageLogo($request->app_icon);
+            }
+            $this->settingLogic->updateAppInfo($params);
+            DB::commit();
+        }catch (\Exception $ex){
+            DB::rollBack();
+        }
+
     }
     //End App Info
 }

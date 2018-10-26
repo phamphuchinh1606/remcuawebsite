@@ -29,7 +29,7 @@
 
 
                     <li class="liChild {{ (Request::is('*collection*') ? 'active' : '') }}">
-                        <a href="{{route('collection')}}" title="Sản phẩm" class="">
+                        <a href="{{route('collection_all')}}" title="Sản phẩm" class="">
                             <span>Sản phẩm</span> <i class="fa fa-angle-down" aria-hidden="true"></i>
                         </a>
                         <ul class="mainChild levlup_2" role="menu">
@@ -37,7 +37,7 @@
                                 @foreach($productTypes as $productType)
                                     <li class=" liChild active">
                                         <?php $isChilds =  isset($productType->childs) && count($productType->childs) > 0 ; ?>
-                                        <a href="{{route('collection',['id' => $productType->id])}}" class=""
+                                        <a href="{{route('collection',['slug' => isset($productType->slug) ? $productType->slug : '1' , 'id' => $productType->id])}}" class=""
                                            title="{{$productType->product_type_name}}">
                                             <span>{{$productType->product_type_name}}</span>
                                             @if($isChilds)
@@ -48,7 +48,7 @@
                                             <ul class="mainChild levlup_3">
                                                 @foreach($productType->childs as $child)
                                                     <li class="active">
-                                                        <a href="{{route('collection',['id' => $child->id])}}" title="{{$child->product_type_name}}"><span>{{$child->product_type_name}}</span></a>
+                                                        <a href="{{route('collection',['slug' => isset($child->slug) ? $child->slug : '1' , 'id' => $child->id])}}" title="{{$child->product_type_name}}"><span>{{$child->product_type_name}}</span></a>
                                                     </li>
                                                 @endforeach
                                             </ul>
@@ -65,16 +65,9 @@
                     </li>
 
 
-                    <li class="">
-                        <a href="/pages/about-us" class="" title="Giới thiệu">
+                    <li class="{{ (Request::is('*about*') ? 'active' : '') }}">
+                        <a href="{{route('about')}}" class="" title="Giới thiệu">
                             <span>Giới thiệu</span>
-                        </a>
-                    </li>
-
-
-                    <li class="">
-                        <a href="/pages/" class="" title="Hướng dẫn">
-                            <span>Hướng dẫn</span>
                         </a>
                     </li>
 

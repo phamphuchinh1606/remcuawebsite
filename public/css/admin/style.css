@@ -157,3 +157,7 @@ Popup confirm
 .list-image .delete-image{
     text-align: center;
 }
+
+.hide{
+    display: none;
+}

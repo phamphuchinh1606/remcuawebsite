@@ -12,5 +12,4 @@
 */
 
 
-Route::get('/blog','BlogController@index')->name('blog');
-Route::get('/blog/detail/{slug?}_{id}','BlogController@detail')->name('blog.detail');
+Route::get('/about','AboutController@index')->name('about');

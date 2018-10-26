@@ -75,6 +75,10 @@
                                                    value="{{$appInfo->app_link_facebook_fanpage}}">
                                         </div>
                                     </div>
+                                    <div class="hide">
+                                        <input type="file" name="app_icon" id="app_icon"/>
+                                        <input type="text" name="app_src_icon" value="{{$appInfo->app_src_icon}}"/>
+                                    </div>
                                 </div>
                             </div>
                             <div class="card-footer">
@@ -92,7 +96,38 @@
                             <i class="fa fa-align-justify"></i> Icon Hệ Thống
                         </div>
                         <div class="card-body">
+                            <div class="box box-warning">
+                                <div class="box-body">
+                                    <div class="upload__area-image">
+                                                <span>
+                                                    @if(isset($appInfo->app_src_icon))
+                                                        <img id="imgHandle" src="{{asset($appInfo->app_src_icon)}}">
+                                                    @else
+                                                        <img id="imgHandle" src="http://beats-city.amagumolabs.io/images/upload/no_image_available.jpg">
+                                                    @endif
 
+                                                    <label for="imgAnchorInput">Upload image</label>
+                                                </span>
+                                        <p>
+                                            <small>(Vui lòng chọn ảnh có đuôi là : jpeg, png, jpg, gif, svg.)</small><br/>
+                                            <small>(Kích thước hình ảnh phù hợp : 228x70)</small>
+                                        </p>
+                                    </div>
+                                    <div class="form__upload">
+
+                                        <div class="form-inline-simple">
+                                            <input type="file" class="'form-control" id="imgAnchorInput" onchange="loadFile(event)">
+                                        </div>
+                                        <script>
+                                            var loadFile = function(event) {
+                                                var output = document.getElementById('imgHandle');
+                                                output.src = URL.createObjectURL(event.target.files[0]);
+                                                document.getElementById('app_icon').files = event.target.files;
+                                            };
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

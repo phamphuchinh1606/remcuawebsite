@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Common\AppCommon;
 use App\Common\Constant;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Storage;
 
