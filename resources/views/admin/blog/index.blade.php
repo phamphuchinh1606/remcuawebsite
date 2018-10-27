@@ -11,6 +11,9 @@
     <script type="text/javascript" src="{{asset('js/admin/plugins/dataTables.bootstrap4.js')}}" class="view-script"></script>
     {{--<script type="text/javascript" src="{{asset('js/admin/plugins/datatables.js')}}" class="view-script"></script>--}}
 @endsection
+@section('body.breadcrumb')
+    {{ Breadcrumbs::render('admin.blog') }}
+@endsection
 
 @section('body.content')
     <div class="container-fluid">

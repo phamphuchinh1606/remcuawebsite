@@ -2,9 +2,8 @@
     <nav class="sidebar-nav ps ps--active-y">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="main.html">
+                <a class="nav-link" href="{{route('admin.home')}}">
                     <i class="nav-icon icon-speedometer"></i> Trang chủ
-                    <span class="badge badge-info">NEW</span>
                 </a>
             </li>
             <li class="nav-item">

@@ -26,7 +26,7 @@
                         </h2>
                         <div class="wpb_text_column wpb_content_element ">
                             <div class="wpb_wrapper">
-                                <p style="text-align: center;">Khách hàng đặt hàng qua HOTLINE hoặc để lại thông tin, shop sẽ gọi lại xác nhận đơn hàng. Lựa chọn kiểu mẫu và thông điệp cần khắc.</p>
+                                <p style="text-align: center;">Khách hàng đặt hàng qua HOTLINE hoặc để lại thông tin, shop sẽ gọi lại xác nhận đơn hàng. Lựa chọn kiểu mẫu và thông điệp cần gia công.</p>
 
                             </div>
                         </div>
@@ -43,11 +43,11 @@
                             </div>
                         </div>
                         <h2 style="font-size: 25px;color: #000000;line-height: 1.4;text-align: center;font-family:Roboto Condensed;font-weight:700;font-style:normal" class="vc_custom_heading">
-                            <a href="/vi-da-nam" target=" _blank">TIẾN HÀNH KHẮC</a>
+                            <a href="/vi-da-nam" target=" _blank">TIẾN HÀNH GIA CÔNG</a>
                         </h2>
                         <div class="wpb_text_column wpb_content_element ">
                             <div class="wpb_wrapper">
-                                <p style="text-align: center;">Lên bản thiết kế demos sản phẩm cho khách hàng. Khi đồng ý bên chúng tôi tiến hành khắc tên – hình lên ví.</p>
+                                <p style="text-align: center;">Lên bản thiết kế demos sản phẩm cho khách hàng. Khi đồng ý bên chúng tôi tiến gia công sản phẩm.</p>
 
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                         </h2>
                         <div class="wpb_text_column wpb_content_element ">
                             <div class="wpb_wrapper">
-                                <p style="text-align: center;">Shop ví da bò nam khắc tên. Miễn Phí vận chuyển TOÀN QUỐC cho tất cả đơn hàng ví da khắc tên.</p>
+                                <p style="text-align: center;">Shop ví da bò nam khắc tên. Miễn Phí vận chuyển TOÀN QUỐC cho tất cả đơn hàng rèm màng cửa.</p>
 
                             </div>
                         </div>

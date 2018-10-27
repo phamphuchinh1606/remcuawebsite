@@ -6,6 +6,10 @@
 @section('body.js')
 @endsection
 
+@section('body.breadcrumb')
+    {{ Breadcrumbs::render('admin.contact.show') }}
+@endsection
+
 @section('body.content')
     <div class="container-fluid product_type">
         <div id="ui-view">

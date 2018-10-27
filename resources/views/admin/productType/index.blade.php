@@ -2,6 +2,8 @@
 
 @extends('admin.layouts.master')
 
+@section('head.title','Danh mục sản phẩm')
+
 @section('head.css')
     <link href="{{asset('css/admin/plugins/dataTables.bootstrap4.css')}}" rel="stylesheet">
 @endsection
@@ -10,6 +12,10 @@
     <script type="text/javascript" src="{{asset('js/admin/plugins/jquery.dataTables.js')}}" class="view-script"></script>
     <script type="text/javascript" src="{{asset('js/admin/plugins/dataTables.bootstrap4.js')}}" class="view-script"></script>
     {{--<script type="text/javascript" src="{{asset('js/admin/plugins/datatables.js')}}" class="view-script"></script>--}}
+@endsection
+
+@section('body.breadcrumb')
+    {{ Breadcrumbs::render('admin.productType') }}
 @endsection
 
 @section('body.content')

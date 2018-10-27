@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('head.title','Danh sách sản phẩm')
+@section('head.title','Tạo mới sản phẩm')
 
 @section('head.css')
     <link href="{{asset('css/admin/plugins/quill.snow.css')}}" rel="stylesheet">
@@ -16,6 +16,10 @@
     <script src="{{asset('js/admin/plugins/dropzone.js')}}"></script>
     <script src="{{asset('js/admin/dropzone-config.js')}}"></script>
     <script src="{{asset('js/admin/product.js')}}"></script>
+@endsection
+
+@section('body.breadcrumb')
+    {{ Breadcrumbs::render('admin.product.create') }}
 @endsection
 
 @section('body.content')

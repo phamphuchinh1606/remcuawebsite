@@ -40,7 +40,6 @@
         <script src='{{ asset('/js/guest/plugins/jquery.min.js?v=1543') }}' type='text/javascript'></script>
         <!--------------CSS----------->
 
-        <link rel="stylesheet" type="text/css" href="{{ asset('guest') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 

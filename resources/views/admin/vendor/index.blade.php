@@ -12,6 +12,10 @@
     {{--<script type="text/javascript" src="{{asset('js/admin/plugins/datatables.js')}}" class="view-script"></script>--}}
 @endsection
 
+@section('body.breadcrumb')
+    {{ Breadcrumbs::render('admin.vendor') }}
+@endsection
+
 @section('body.content')
     <div class="container-fluid">
         <div id="ui-view">

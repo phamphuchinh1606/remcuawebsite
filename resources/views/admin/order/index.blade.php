@@ -8,6 +8,11 @@
     <link href="{{asset('css/admin/plugins/daterangepicker.min.css')}}" rel="stylesheet">
 @endsection
 
+@section('body.breadcrumb')
+    {{ Breadcrumbs::render('admin.order') }}
+@endsection
+
+
 @section('body.js')
     <script type="text/javascript" src="{{asset('js/admin/plugins/moment.min.js')}}" class="view-script"></script>
     <script type="text/javascript" src="{{asset('js/admin/plugins/jquery.dataTables.js')}}" class="view-script"></script>

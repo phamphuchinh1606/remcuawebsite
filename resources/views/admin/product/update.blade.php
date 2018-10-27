@@ -2,7 +2,7 @@
 
 @extends('admin.layouts.master')
 
-@section('head.title','Danh sách sản phẩm')
+@section('head.title','Cập nhật sản phẩm')
 
 @section('head.css')
     <link href="{{asset('css/admin/plugins/quill.snow.css')}}" rel="stylesheet">
@@ -17,6 +17,10 @@
     {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>--}}
     <script src="{{asset('js/admin/plugins/text-editor.js')}}"></script>
     <script src="{{asset('js/admin/product.js')}}"></script>
+@endsection
+
+@section('body.breadcrumb')
+    {{ Breadcrumbs::render('admin.product.edit', $product->product_name) }}
 @endsection
 
 @section('body.content')

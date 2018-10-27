@@ -12,7 +12,7 @@
         @foreach($productTypes as $productType)
             <?php $isChilds =  isset($productType->childs) && count($productType->childs) > 0 ; ?>
             <li class="root_parent actived @if($isChilds) nomega has_megamenu @endif ">
-                <a href="{{route('collection',['id' => $productType->id])}}">
+                <a href="{{route('collection',['slug' => isset($productType->slug) ? $productType->slug : '1', 'id' => $productType->id])}}">
                     <img src="{{\App\Common\Constant::$PATH_URL_UPLOAD_IMAGE.$productType->image_icon}}"/>
                     {{$productType->product_type_name}}
                     @if($isChilds)
@@ -24,7 +24,7 @@
                     <ul class="mainChild levlup_2" role="menu">
                         @foreach($productType->childs as $child)
                             <li class="dropdownmenu2">
-                                <a href="{{route('collection',['id' => $child->id])}}" title="{{$child->product_type_name}}">
+                                <a href="{{route('collection',['slug' => isset($child->slug) ? $child->slug : '1', 'id' => $child->id])}}" title="{{$child->product_type_name}}">
                                     <span>{{$child->product_type_name}}</span>
                                     {{--<i class="fa fa-angle-right" aria-hidden="true"></i>--}}
                                 </a>

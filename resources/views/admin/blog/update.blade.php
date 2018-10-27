@@ -19,6 +19,9 @@
     <script src="{{asset('js/admin/plugins/daterangepicker.min.js') }}" type='text/javascript'></script>
     <script src="{{asset('js/admin/date-picker.js') }}" type='text/javascript'></script>
 @endsection
+@section('body.breadcrumb')
+    {{ Breadcrumbs::render('admin.blog.edit',$blog->blog_title) }}
+@endsection
 
 @section('body.content')
     <div class="container-fluid">

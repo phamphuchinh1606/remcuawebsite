@@ -7,6 +7,9 @@
 @section('body.js')
     {{--<script src="{{asset('js/admin/switch.plugin.js')}}"></script>--}}
 @endsection
+@section('body.breadcrumb')
+    {{ Breadcrumbs::render('admin.productType.create') }}
+@endsection
 @section('body.content')
     <div class="container-fluid">
         <div id="ui-view">

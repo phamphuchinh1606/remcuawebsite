@@ -7,7 +7,6 @@
 @endsection
 
 @section('body.breadcrumb')
-
     {{ Breadcrumbs::render('admin.product') }}
 @endsection
 

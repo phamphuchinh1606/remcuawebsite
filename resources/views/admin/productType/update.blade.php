@@ -1,12 +1,14 @@
 <?php use App\Common\Constant; ?>
 @extends('admin.layouts.master')
-
+@section('head.title','Cập nhật danh mục sản phẩm')
 @section('head.css')
     <link href="{{asset('css/admin/product.css')}}" rel="stylesheet">
 @endsection
 
 @section('body.js')@endsection
-
+@section('body.breadcrumb')
+    {{ Breadcrumbs::render('admin.productType.edit', $productType->product_type_name) }}
+@endsection
 @section('body.content')
     <div class="container-fluid product_type">
         <div id="ui-view">

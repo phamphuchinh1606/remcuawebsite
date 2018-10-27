@@ -89,8 +89,11 @@ class SettingLogic extends BaseLogic{
                 $appInfo->app_email = $params['appEmail'];
                 $appInfo->app_facebook = $params['appFacebook'];
                 $appInfo->app_address = $params['appAddress'];
+                $appInfo->app_address_google_map = $params['appAddressGoogleMap'];
                 $appInfo->app_title_chat_box = $params['appTitleChatBox'];
                 $appInfo->app_link_facebook_fanpage = $params['appLinkFacebookFanpage'];
+                $appInfo->app_make_product_video_one = $params['appMakeProductVideoOne'];
+                $appInfo->app_make_product_video_two = $params['appMakeProductVideoTwo'];
                 if(isset($params['imageIcon'])){
                     $appInfo->app_src_icon = $params['imageIcon'];
                 }

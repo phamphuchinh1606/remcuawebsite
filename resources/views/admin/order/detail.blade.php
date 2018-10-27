@@ -10,6 +10,11 @@
 @section('body.js')
 @endsection
 
+@section('body.breadcrumb')
+    {{ Breadcrumbs::render('admin.order.show') }}
+@endsection
+
+
 @section('body.content')
     <div class="container-fluid">
         <div id="ui-view">

@@ -11,6 +11,10 @@
     <script type="text/javascript" src="{{asset('js/admin/plugins/dataTables.bootstrap4.js')}}" class="view-script"></script>
 @endsection
 
+@section('body.breadcrumb')
+    {{ Breadcrumbs::render('admin.contact') }}
+@endsection
+
 @section('body.content')
     <div class="container-fluid">
         <div id="ui-view">

@@ -22,9 +22,11 @@ class CreateSettingAppInfosTable extends Migration
             $table->string('app_email',100)->nullable(true);
             $table->string('app_facebook',255)->nullable(true);
             $table->string('app_address',255)->nullable(true);
+            $table->string('app_address_google_map',1000)->nullable(true);
             $table->string('app_title_chat_box',255)->nullable(true);
-            $table->string('app_link_facebook_fanpage',255)->nullable(true);
-
+            $table->string('app_link_facebook_fanpage',1000)->nullable(true);
+            $table->string('app_make_product_video_one',1000)->nullable(true);
+            $table->string('app_make_product_video_two',1000)->nullable(true);
             $table->timestamps();
         });
     }

@@ -62,6 +62,13 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
+                                        <label class="col-md-2 col-form-label" for="text-input">Địa chỉ google map</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" id="app_address_google_map" type="text" name="app_address_google_map" placeholder="Địa chỉ google map"
+                                                   value="{{$appInfo->app_address_google_map}}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
                                         <label class="col-md-2 col-form-label" for="text-input">Title ChatBox</label>
                                         <div class="col-md-10">
                                             <input class="form-control" id="app_title_chat_box" type="text" name="app_title_chat_box" placeholder="Tiều đề chat box"
@@ -73,6 +80,20 @@
                                         <div class="col-md-10">
                                             <input class="form-control" id="app_link_facebook_fanpage" type="text" name="app_link_facebook_fanpage" placeholder="Địa chỉ facebook fanpage"
                                                    value="{{$appInfo->app_link_facebook_fanpage}}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label" for="text-input">Video Tạo Sản Phẩm 1</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" id="app_make_product_video_one" type="text" name="app_make_product_video_one" placeholder="Video tạo sản phẩm 1"
+                                                   value="{{$appInfo->app_make_product_video_one}}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label" for="text-input">Video Tạo Sản Phẩm 2</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" id="app_make_product_video_two" type="text" name="app_make_product_video_two" placeholder="Video tạo sản phẩm 2"
+                                                   value="{{$appInfo->app_make_product_video_two}}">
                                         </div>
                                     </div>
                                     <div class="hide">

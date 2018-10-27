@@ -15,6 +15,15 @@ class ContactService extends BaseService{
         return $contacts;
     }
 
+    public function getContactNew(){
+        $contacts = $this->contactLogic->getContactNew();
+        foreach ($contacts as $contact){
+            $contact->status_name = AppCommon::nameStatusIsRead($contact->is_read);
+            $contact->status_class = AppCommon::classStatusIsRead($contact->is_read);
+        }
+        return $contacts;
+    }
+
     public function countContactNotRead(){
         return $this->contactLogic->countContactNotRead();
     }

@@ -48,46 +48,9 @@
                                     </div>
 
 
-                                    <div class="sing_right_widget">
+                                    <div class="sing_right_widget pdHomeBlock" style="padding: 0px">
                                         <h2>Tags</h2>
-                                        <div class="sing_right_widg_content">
-                                            <ul class="category_right blogTags">
-
-
-
-
-                                                <li>
-                                                    <a href="https://st-fashion.myharavan.com/blogs/news/tagged/thoi-trang">Thời trang</a>
-                                                </li>
-
-
-
-
-
-                                                <li>
-                                                    <a href="https://st-fashion.myharavan.com/blogs/news/tagged/tin-hot">Tin hot</a>
-                                                </li>
-
-
-
-
-
-                                                <li>
-                                                    <a href="https://st-fashion.myharavan.com/blogs/news/tagged/xem-nhieu">Xem nhiều</a>
-                                                </li>
-
-
-
-
-
-                                                <li>
-                                                    <a href="https://st-fashion.myharavan.com/blogs/news/tagged/moi">Mới</a>
-                                                </li>
-
-
-
-                                            </ul>
-                                        </div>
+                                        @include('guest.common.__tag_key_one')
                                     </div>
 
                                 </div>
@@ -163,6 +126,9 @@
                                 border-color: rgba(136, 183, 213, 0);
                                 border-left-color: #eb0088;
                                 border-width: 4px;
+                            }
+                            .pdHomeBlock .block-menu-right{
+                                background: #fff;
                             }
                         </style>
                     </div>

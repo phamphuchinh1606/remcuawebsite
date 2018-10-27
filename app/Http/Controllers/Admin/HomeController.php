@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-        return view('admin.home');
+        $contactsNew = $this->contactService->getContactNew();
+        return view('admin.home',[
+            'contactsNew' => $contactsNew
+        ]);
     }
 }

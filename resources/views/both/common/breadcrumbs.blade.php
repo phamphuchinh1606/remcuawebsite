@@ -1,5 +1,5 @@
 @if (count($breadcrumbs))
-    @if(!Auth::check())
+    @if(Auth::check() && Request::is('*admin*') )
         <ol class="breadcrumb">
             @foreach ($breadcrumbs as $breadcrumb)
                 @if ($breadcrumb->url && !$loop->last)
