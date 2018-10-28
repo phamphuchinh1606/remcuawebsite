@@ -27,10 +27,10 @@
         @include('guest.home.partials.__banner_top',['topBanners' => $topBanners])
 
         {{--Home Product Block News--}}
-        @include('guest.home.partials.__product_home_block',['blockHeader' => 'Sản Phẩm Mới',['productHots' => $productNews]])
+        @include('guest.home.partials.__product_home_block',['blockHeader' => 'Sản Phẩm Mới','products' => $productNews])
 
         {{--Home Product Block Hots--}}
-        @include('guest.home.partials.__product_home_block',['blockHeader' => 'Sản Phẩm Bán Chạy',['productHots' => $productHots]])
+        @include('guest.home.partials.__product_home_block',['blockHeader' => 'Sản Phẩm Bán Chạy','products' => $productHots])
 
         {{--Home Product Block Made--}}
         {{--@include('guest.home.partials.__product_home_block_1')--}}

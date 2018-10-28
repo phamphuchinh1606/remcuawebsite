@@ -59,7 +59,10 @@ class ProductLogic extends BaseLogic{
     }
 
     public function getListProductHot($limit = 5){
-        $products = Product::orderBy('qty_sale_order','desc')->limit($limit)->get();
+        $products = Product::where('products.is_delete', Constant::$DELETE_FLG_OFF)
+            ->where('products.is_public',Constant::$PUBLIC_FLG_ON)
+            ->orderBy('qty_sale_order','desc')
+            ->limit($limit)->get();
         return $products;
     }
 

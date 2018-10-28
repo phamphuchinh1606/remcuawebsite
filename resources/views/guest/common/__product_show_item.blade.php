@@ -39,9 +39,18 @@
                     </a>
                 </h3>
                 <p class="pdPrice">
-
-                    <span>{{AppCommon::formatMoney($product->product_price)}}₫</span>
-                    <del class="pdComparePrice">{{AppCommon::formatMoney($product->product_cost_price)}}₫</del>
+                    <span>
+                        @if($product->product_price != 0)
+                            {{AppCommon::formatMoney($product->product_price)}}₫
+                        @else
+                            Liên hệ để xem giá
+                        @endif
+                    </span>
+                    <del class="pdComparePrice">
+                        @if($product->product_cost_price != 0)
+                            {{AppCommon::formatMoney($product->product_cost_price)}}₫
+                        @endif
+                    </del>
                 </p>
                 <div class="pdLoopListView">
                     <ul class="notStyle">

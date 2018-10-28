@@ -15,9 +15,11 @@
                     </div>
                     <div class="woocommerce product-list">
                         <div class="row">
-                            @foreach($productHots as $product)
-                                @include('guest.common.__product_show_item_detail',['product' => $product])
-                            @endforeach
+                            @if(isset($products))
+                                @foreach($products as $product)
+                                    @include('guest.common.__product_show_item_detail',['product' => $product])
+                                @endforeach
+                            @endif
                         </div>
                     </div>
                 </div>

@@ -6,9 +6,12 @@
     <div class="pdLoopItem animated zoomIn">
         <div class="itemLoop clearfix">
             <div class="pdLoopImg elementFixHeight">
-                <div class="pdLabel sale">
-                    <span>- {{$product->product_sale_percent}}%</span>
-                </div>
+                @if($product->product_sale_percent != 0)
+                    <div class="pdLabel sale">
+                        <span>- {{$product->product_sale_percent}}%</span>
+                    </div>
+                @endif
+
                 <a href="{{route('product_detail',['slug' => $product->slug, 'id' => $product->id])}}" title="{{$product->product_name}}">
                     <img alt="{{$product->product_name}}" data-reg="true" class="imgLoopItem"
                          src="{{asset(Constant::$PATH_URL_UPLOAD_IMAGE.$product->product_image)}}" style="width: auto;">
@@ -31,9 +34,18 @@
                 </h3>
                 <p class="pdPrice">
 
-                    <span>{{AppCommon::formatMoney($product->product_price)}}₫</span>
-                    <del class="pdComparePrice">{{AppCommon::formatMoney($product->product_cost_price)}}₫</del>
-
+                    <span>
+                        @if($product->product_price != 0)
+                            {{AppCommon::formatMoney($product->product_price)}}₫
+                        @else
+                            Liên hệ để xem giá
+                        @endif
+                    </span>
+                    <del class="pdComparePrice">
+                        @if($product->product_cost_price != 0)
+                            {{AppCommon::formatMoney($product->product_cost_price)}}₫
+                        @endif
+                    </del>
                 </p>
                 <div class="pdLoopListView">
                     <ul class="notStyle">

@@ -13,7 +13,12 @@
             <?php $isChilds =  isset($productType->childs) && count($productType->childs) > 0 ; ?>
             <li class="root_parent actived @if($isChilds) nomega has_megamenu @endif ">
                 <a href="{{route('collection',['slug' => isset($productType->slug) ? $productType->slug : '1', 'id' => $productType->id])}}">
-                    <img src="{{\App\Common\Constant::$PATH_URL_UPLOAD_IMAGE.$productType->image_icon}}"/>
+                    @if(isset($productType->image_icon))
+                        <img src="{{\App\Common\Constant::$PATH_URL_UPLOAD_IMAGE.$productType->image_icon}}"/>
+                    @else
+                        <img src="{{asset('images/guest/icon-menu.png')}}"/>
+                    @endif
+
                     {{$productType->product_type_name}}
                     @if($isChilds)
                         <i class="fa fa-angle-right" aria-hidden="true"></i>

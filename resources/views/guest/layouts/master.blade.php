@@ -86,6 +86,14 @@
 
         {{--Css Customer--}}
         @yield('head.css')
+        <style>
+            body{
+                /*background-color: #00aced;*/
+                background-image: url('{{asset('images/guest/bg_2.png')}}');
+                background-repeat-x: repeat-y;
+                background-repeat-y: repeat-y;
+            }
+        </style>
     </head>
 </head>
 <body class="stTheme @yield('class_body')">

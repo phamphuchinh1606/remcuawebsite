@@ -8,7 +8,7 @@
                     @foreach($productTypes as $productType)
                         <li class="">
                             <span></span>
-                            <a class="" href="{{route('collection',['id' => $productType->id])}}" title="Đồng hồ" target="_self">
+                            <a class="" href="{{route('collection',['slug' => isset($productType->slug) ? $productType->slug : '' ,  'id' => $productType->id])}}" title="Đồng hồ" target="_self">
                                 {{$productType->product_type_name}}
                             </a>
                         </li>

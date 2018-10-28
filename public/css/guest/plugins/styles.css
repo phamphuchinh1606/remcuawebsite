@@ -60,7 +60,6 @@ body{
 	color: #0f0f0f;
 	overflow-x: hidden;
 	font-size: 14px;
-	background-color:#222222;
 }
 .stBody {
 	width: 100%;
@@ -508,7 +507,7 @@ a:hover{
 	overflow: hidden;
 }
 .pdLoopItem .pdLoopImg img {
-	max-height: 100%;
+	max-height: 212px;
 	min-height:212px;
 	display: block;
 	margin: 0 auto;
