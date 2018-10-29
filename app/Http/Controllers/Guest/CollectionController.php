@@ -15,13 +15,31 @@ class CollectionController extends Controller
         }
         $sortBy = null;
         if(isset($request->sort_by)) $sortBy = $request->sort_by;
+        $searchInfo = $this->getSearchInfo($request, $productType);
         $products = $this->productService->getListProductByProductType($id,$sortBy);
         return view('guest.collection.collection',[
             'products' => $products,
             'productType' => $productType,
-            'sortBy' => $sortBy
+            'sortBy' => $sortBy,
+            'searchInfo' => $searchInfo
         ]);
+    }
 
+    private function getSearchInfo(Request $request, $productType){
+        $searchInfo = new \StdClass();
+        if(isset($request->product_type)){
+            $searchInfo->product_type = $request->product_type;
+        }else if(isset($productType->id)){
+            $searchInfo->product_type = $productType->id;
+            if(isset($productType->parent_id)){
+                $searchInfo->product_type = $productType->parent_id;
+            }
+        }
+        $searchInfo->product_price = "";
+        if(isset($request->product_price)){
+            $searchInfo->product_price = $request->product_price;
+        }
+        return $searchInfo;
     }
 
     public function search(Request $request){

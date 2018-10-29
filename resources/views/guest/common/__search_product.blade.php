@@ -1,5 +1,56 @@
+<script>
+    let searchInfo = {
+        'product_type' : '{{$searchInfo->product_type}}',
+        'product_price' : '{{$searchInfo->product_price}}'
+    };
+    function getSearchInfo(){
+        searchInfo.product_type = '';
+        $('input[name=product_type]').each(function(){
+            if($(this).prop("checked")){
+                searchInfo.product_type += (searchInfo.product_type == '' ? '' : '-') + $(this).val();
+            }
+        });
+        searchInfo.product_price = '';
+        $('input[name=search_price]').each(function(){
+            if($(this).prop("checked")){
+                searchInfo.product_price += (searchInfo.product_price == '' ? '' : '-') + $(this).val();
+            }
+        });
+    }
+    $(document).ready(function(){
+       if(searchInfo.product_type != null && searchInfo.product_type != undefined){
+           let listProductTypeId = searchInfo.product_type.split('-');
+           for(productTypeId of listProductTypeId)
+           {
+               $('#product_type'+ productTypeId).prop( "checked", true );
+           }
+       }
+        if(searchInfo.product_price != null && searchInfo.product_price != undefined){
+            let listPrice = searchInfo.product_price.split('-');
+            for(price of listPrice)
+            {
+                $('#product_price_'+ price).prop( "checked", true );
+            }
+        }
+
+       $('.search_info').on('click',function(){
+           getSearchInfo();
+           $('#btn-apply').removeClass('hide');
+       });
+        $('#btn-apply').on('click',function(){
+            window.location = "{{route('collection_all')}}" + "?product_type="+searchInfo.product_type+"&product_price="+searchInfo.product_price;
+        });
+    });
+
+
+</script>
+
 <div class="block left-module">
-    <p class="title_block">Bộ lọc</p>
+    <p class="title_block">
+        Bộ lọc
+        <button type="button" class="btn btn-primary pull-right hide" id="btn-apply">Áp dụng</button>
+    </p>
+
     <div class="block_content filter_xs">
         <!-- layered -->
         <div class="layered layered-filter-price">
@@ -10,7 +61,7 @@
                 <ul class="check-box-list">
                     @foreach($productTypes as $productType)
                         <li>
-                            <input type="checkbox" id="product_type{{$productType->id}}" name="cc" data-vendor="(vendor:product**{{$productType->id}})">
+                            <input class="search_info" type="checkbox" id="product_type{{$productType->id}}" name="product_type" value="{{$productType->id}}">
                             <label for="product_type{{$productType->id}}">
                                 <span class="button"></span>
                                 {{$productType->product_type_name}}
@@ -90,35 +141,35 @@
             <div class="layered-content slider-range filter-price">
                 <ul class="check-box-list">
                     <li>
-                        <input type="checkbox" id="p1" name="cc" data-price="(price:product<=100000)">
+                        <input type="checkbox" id="product_price<100000" class="search_info" name="search_price" value="<100000">
                         <label for="p1">
                             <span class="button"></span>
                             Dưới 100,000₫
                         </label>
                     </li>
                     <li>
-                        <input type="checkbox" id="p2" name="cc" data-price="((price:product>100000)&amp;&amp;(price:product<=300000))">
+                        <input type="checkbox" id="product_price100000_300000" class="search_info" name="search_price" value="100000_300000">
                         <label for="p2">
                             <span class="button"></span>
                             100,000₫ - 300,000₫
                         </label>
                     </li>
                     <li>
-                        <input type="checkbox" id="p3" name="cc" data-price="((price:product>300000)&amp;&amp;(price:product<=500000))">
+                        <input type="checkbox" id="product_price300000_500000" class="search_info" name="search_price" value="300000_500000">
                         <label for="p3">
                             <span class="button"></span>
                             300,000₫ - 500,000₫
                         </label>
                     </li>
                     <li>
-                        <input type="checkbox" id="p4" name="cc" data-price="((price:product>500000)&amp;&amp;(price:product<=1000000))">
+                        <input type="checkbox" id="product_price500000_1000000" class="search_info" name="search_price" value="500000_1000000">
                         <label for="p4">
                             <span class="button"></span>
                             500,000₫ - 1,000,000₫
                         </label>
                     </li>
                     <li>
-                        <input type="checkbox" id="p5" name="cc" data-price="(price:product>=1000000)">
+                        <input type="checkbox" id="product_price500000_1000000" class="search_info" name="search_price" value=">1000000">
                         <label for="p5">
                             <span class="button"></span>
                             Trên 1,000,000₫

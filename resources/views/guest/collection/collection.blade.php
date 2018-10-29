@@ -23,7 +23,7 @@
                         <div class="box_sidebar">
                             {{--@include('guest.common.__right_linklist_menu')--}}
 
-                            @include('guest.common.__search_product')
+                            @include('guest.common.__search_product',['searchInfo' => $searchInfo])
                         </div>
                     </div>
 

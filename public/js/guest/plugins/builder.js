@@ -330,7 +330,7 @@ STB.Index = {
 /* js for collection */
 STB.Collection = {
 	init: function(){
-		this.actionFilter();
+		// this.actionFilter();
 		this.loadView();
 		this.changeView();
 	},
