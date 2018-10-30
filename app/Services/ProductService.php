@@ -10,8 +10,12 @@ use Storage;
 
 class ProductService extends BaseService{
 
-    public function getAllLProduct(){
-        $listProduct = $this->productLogic->getAllLProduct();
+    public function getAllLProduct($searchInfo = null, $sortBy = null){
+        if(isset($searchInfo)){
+            $listProduct = $this->productLogic->getAllProductBySearchInfo($searchInfo,$sortBy);
+        }else{
+            $listProduct = $this->productLogic->getAllLProduct();
+        }
         foreach ($listProduct as $product){
             $product->public_name = AppCommon::namePublicProductType($product->is_public);
             $product->public_class = AppCommon::classPublicProductType($product->is_public);
@@ -128,10 +132,9 @@ class ProductService extends BaseService{
     }
 
     //Service Guest
-    public function getListProductByProductType($productTypeId, $sortBy){
-        $products = [];
+    public function getListProductByProductType($productTypeId, $sortBy, $searchInfo){
         if($productTypeId == null){
-            $products = $this->getAllLProduct();
+            $products = $this->getAllLProduct($searchInfo,$sortBy);
         }else{
             $products = $this->productLogic->getListProductByProductType($productTypeId,$sortBy);
         }

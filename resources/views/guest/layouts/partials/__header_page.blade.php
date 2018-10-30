@@ -70,7 +70,7 @@
                                                 <i class="fa fa-globe" aria-hidden="true"></i>
                                             </div>
                                             <div class="text">
-                                                <span>Liên hện</span>
+                                                <span>Liên hệ</span>
                                             </div>
                                         </div>
                                     </a>

@@ -1,6 +1,8 @@
 @extends('guest.layouts.master')
 
-@section('head.title','Ví Da Khắc Tên')
+@section('head.title')
+    {{$appInfo->app_name}}
+@endsection
 
 @section('head.css')
     <link href='{{ asset('/css/guest/plugins/home.css?v=1543') }}' rel='stylesheet' type='text/css' media='all'/>

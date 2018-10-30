@@ -19,6 +19,86 @@ class ProductLogic extends BaseLogic{
         return $listProducts;
     }
 
+    public function getAllProductBySearchInfo($searchInfo = null, $sortBy = null){
+        $query = Db::table(TableNameDB::$TableProduct.' as product')
+            ->join(TableNameDB::$TableProductType.' as type', 'product.product_type_id','=','type.id')
+            ->where('product.is_delete', Constant::$DELETE_FLG_OFF);
+        $delimiter = '-';
+
+        if(isset($searchInfo)){
+            if(isset($searchInfo->product_type)){
+                $productTypes = explode($delimiter,$searchInfo->product_type);
+                $query->where(function($query) use ($productTypes) {
+                    foreach ($productTypes as $productTypeId){
+                        if($productTypeId != ''){
+                            $query->orWhere('type.id',$productTypeId)
+                                ->orWhere('type.parent_id',$productTypeId);
+                        }
+                    }
+                });
+            }
+            if(isset($searchInfo->product_price) && $searchInfo->product_price != ''){
+                $productPrices = explode($delimiter,$searchInfo->product_price);
+                $query->where(function($query) use ($productPrices) {
+                    foreach ($productPrices as $productPrice){
+                        switch ($productPrice){
+                            case 'less_100000':
+                                $query->orWhere('product.product_price','<',100000);
+                                break;
+                            case '100000_300000':
+                                $query->orWhereBetween('product.product_price',array(100000, 300000));
+                                break;
+                            case '300000_500000':
+                                $query->orWhereBetween('product.product_price',array(300000, 500000));
+                                break;
+                            case '500000_1000000':
+                                $query->orWhereBetween('product.product_price',array(500000, 1000000));
+                                break;
+                            case 'bigger_1000000':
+                                $query->orWhere('product.product_price','>',1000000);
+                                break;
+                        }
+                    }
+                });
+
+            }
+        }
+        if($sortBy != null){
+            switch ($sortBy){
+                case Constant::$SORT_BY_PRODUCT_CREATED_ASCENDING:
+                    $query->orderBy('created_at','asc');
+                    break;
+                case Constant::$SORT_BY_PRODUCT_CREATED_DESCENDING:
+                    $query->orderBy('created_at','desc');
+                    break;
+                case Constant::$SORT_BY_PRODUCT_PRICE_ASCENDING:
+                    $query->orderBy('product_price','asc');
+                    break;
+                case Constant::$SORT_BY_PRODUCT_PRICE_DESCENDING:
+                    $query->orderBy('product_price','desc');
+                    break;
+                case Constant::$SORT_BY_PRODUCT_TITLE_ASCENDING:
+                    $query->orderBy('product_name','asc');
+                    break;
+                case Constant::$SORT_BY_PRODUCT_TITLE_DESCENDING:
+                    $query->orderBy('product_name','desc');
+                    break;
+                case Constant::$SORT_BY_PRODUCT_BEST_SELLING:
+                    $query->orderBy('qty_sale_order','desc');
+                    break;
+                default:
+                    $query->orderBy('created_at','desc');
+                    break;
+            }
+        }else{
+            $query->orderBy('created_at','desc');
+        }
+        $listProducts = $query->select('product.*', 'type.product_type_name')
+//        dd($query->toSql());
+            ->paginate(20);
+        return $listProducts;
+    }
+
     public function searchProductByName($productName){
         $listProducts = Db::table(TableNameDB::$TableProduct.' as product')
             ->join(TableNameDB::$TableProductType.' as type', 'product.product_type_id','=','type.id')

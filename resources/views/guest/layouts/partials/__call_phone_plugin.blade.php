@@ -10,7 +10,11 @@
         </div>
     </div>
     <div class="tel">
-        <a href="tel:{{$appInfo->app_phone}}"><p class="fone">Bấm để gọi ngay</p></a>
+        <a href="tel:{{$appInfo->app_phone}}">
+            <small>Hotline tư vấn (24/7)</small>
+            <p class="fone">
+                {{$appInfo->app_phone}}
+            </p></a>
     </div>
 </div>
 

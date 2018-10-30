@@ -22,7 +22,7 @@
            let listProductTypeId = searchInfo.product_type.split('-');
            for(productTypeId of listProductTypeId)
            {
-               $('#product_type'+ productTypeId).prop( "checked", true );
+               $('#product_type_'+ productTypeId).prop( "checked", true );
            }
        }
         if(searchInfo.product_price != null && searchInfo.product_price != undefined){
@@ -61,8 +61,8 @@
                 <ul class="check-box-list">
                     @foreach($productTypes as $productType)
                         <li>
-                            <input class="search_info" type="checkbox" id="product_type{{$productType->id}}" name="product_type" value="{{$productType->id}}">
-                            <label for="product_type{{$productType->id}}">
+                            <input class="search_info" type="checkbox" id="product_type_{{$productType->id}}" name="product_type" value="{{$productType->id}}">
+                            <label for="product_type_{{$productType->id}}">
                                 <span class="button"></span>
                                 {{$productType->product_type_name}}
                             </label>
@@ -141,36 +141,36 @@
             <div class="layered-content slider-range filter-price">
                 <ul class="check-box-list">
                     <li>
-                        <input type="checkbox" id="product_price<100000" class="search_info" name="search_price" value="<100000">
-                        <label for="p1">
+                        <input type="checkbox" id="product_price_less_100000" class="search_info" name="search_price" value="less_100000">
+                        <label for="product_price_less_100000">
                             <span class="button"></span>
                             Dưới 100,000₫
                         </label>
                     </li>
                     <li>
-                        <input type="checkbox" id="product_price100000_300000" class="search_info" name="search_price" value="100000_300000">
-                        <label for="p2">
+                        <input type="checkbox" id="product_price_100000_300000" class="search_info" name="search_price" value="100000_300000">
+                        <label for="product_price_100000_300000">
                             <span class="button"></span>
                             100,000₫ - 300,000₫
                         </label>
                     </li>
                     <li>
-                        <input type="checkbox" id="product_price300000_500000" class="search_info" name="search_price" value="300000_500000">
-                        <label for="p3">
+                        <input type="checkbox" id="product_price_300000_500000" class="search_info" name="search_price" value="300000_500000">
+                        <label for="product_price_300000_500000">
                             <span class="button"></span>
                             300,000₫ - 500,000₫
                         </label>
                     </li>
                     <li>
-                        <input type="checkbox" id="product_price500000_1000000" class="search_info" name="search_price" value="500000_1000000">
-                        <label for="p4">
+                        <input type="checkbox" id="product_price_500000_1000000" class="search_info" name="search_price" value="500000_1000000">
+                        <label for="product_price_500000_1000000">
                             <span class="button"></span>
                             500,000₫ - 1,000,000₫
                         </label>
                     </li>
                     <li>
-                        <input type="checkbox" id="product_price500000_1000000" class="search_info" name="search_price" value=">1000000">
-                        <label for="p5">
+                        <input type="checkbox" id="product_price_bigger_1000000" class="search_info" name="search_price" value="bigger_1000000">
+                        <label for="product_price_bigger_1000000">
                             <span class="button"></span>
                             Trên 1,000,000₫
                         </label>

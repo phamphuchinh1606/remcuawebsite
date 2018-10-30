@@ -11,7 +11,6 @@
 |
 */
 
-
+Route::get('/collection-all','CollectionController@index')->name('collection_all');
 Route::get('/collection/{slug?}_{id?}','CollectionController@index')->name('collection');
-Route::get('/collection','CollectionController@index')->name('collection_all');
 Route::get('/search','CollectionController@search')->name('search');

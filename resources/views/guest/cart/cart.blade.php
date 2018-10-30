@@ -1,7 +1,9 @@
 <?php use App\Common\AppCommon; ?>
 @extends('guest.layouts.master')
 
-@section('head.title','Ví Da Khắc Tên')
+@section('head.title')
+    {{$appInfo->app_name}}
+@endsection
 
 @section('template','cart')
 

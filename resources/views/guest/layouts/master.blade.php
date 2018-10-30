@@ -9,7 +9,7 @@
         <![endif]-->
         <meta name="_token" content="{{ csrf_token() }}">
         <title>
-            @yield('head.title','Ví Da Khắc Tên')
+            @yield('head.title','Phu Chinh')
         </title>
 
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=0' name='viewport'/>
