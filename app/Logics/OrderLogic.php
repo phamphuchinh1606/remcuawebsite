@@ -5,6 +5,7 @@ namespace App\Logics;
 use App\Common\AppCommon;
 use App\Common\Constant;
 use App\Models\Order;
+use App\Models\OrderDetail;
 use App\Models\TableNameDB;
 
 class OrderLogic extends BaseLogic{
@@ -72,5 +73,10 @@ class OrderLogic extends BaseLogic{
         $order->note = $params['note'];
         $order->save();
         return $order;
+    }
+
+    public function getMaxOrderCode(){
+        $orderCode = Order::max('order_code')->first();
+        return $orderCode->order_code;
     }
 }

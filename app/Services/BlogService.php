@@ -13,7 +13,7 @@ class BlogService extends BaseService{
             $blog->public_name = AppCommon::namePublicProductType($blog->is_public);
             $blog->public_class = AppCommon::classPublicProductType($blog->is_public);
             $blog->str_post_date = AppCommon::dateFormat($blog->post_date,'d/m/Y');
-            $blog->dot_blog_description = AppCommon::showTextDot($blog->blog_description,150);
+            $blog->dot_blog_description = AppCommon::showTextDot($blog->blog_description,140);
         }
         return $blogs;
     }
@@ -23,7 +23,7 @@ class BlogService extends BaseService{
         foreach ($blogs as $blog){
             $blog->str_post_date = AppCommon::dateFormat($blog->post_date,'d/m/Y');
             $blog->dot_blog_title = AppCommon::showTextDot($blog->blog_title,30);
-            $blog->dot_blog_description = AppCommon::showTextDot($blog->blog_description,150);
+            $blog->dot_blog_description = AppCommon::showTextDot($blog->blog_description,140);
         }
         return $blogs;
     }

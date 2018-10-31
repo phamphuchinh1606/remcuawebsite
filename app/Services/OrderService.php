@@ -65,6 +65,16 @@ class OrderService extends BaseService{
         }
     }
 
+    private function ramdomOrderCode(){
+        $maxOrderCode = $this->orderLogic->getMaxOrderCode();
+        $strStart = "HD";
+        if(isset($maxOrderCode)){
+
+        }else{
+            return str_pad($strStart,7,'0').'1';
+        }
+    }
+
     public function updateStatusOrder($orderId, $orderStatus){
         $order = $this->orderLogic->findId($orderId);
         if($orderStatus != $order->status_order){

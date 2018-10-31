@@ -118,15 +118,15 @@
                                                             <div class="select clearfix" style="display:none">
                                                                 <select id="product-select" name="id">
 
-                                                                    <option value="1019623662">Trắng / M - 339,000₫</option>
+                                                                    <option value="{{$product->id}}">Trắng / M - 339,000₫</option>
 
-                                                                    <option value="1019623663">Đen / M - 339,000₫</option>
+                                                                    <option value="{{$product->id}}">Đen / M - 339,000₫</option>
 
-                                                                    <option value="1019623664">Xanh / M - 339,000₫</option>
+                                                                    <option value="{{$product->id}}">Xanh / M - 339,000₫</option>
 
-                                                                    <option value="1019623665">Trắng / L - 339,000₫</option>
+                                                                    <option value="{{$product->id}}">Trắng / L - 339,000₫</option>
 
-                                                                    <option value="1019623666">Trắng / XL - 339,000₫</option>
+                                                                    <option value="{{$product->id}}">Trắng / XL - 339,000₫</option>
 
                                                                 </select>
                                                             </div>
@@ -136,13 +136,13 @@
                                                                 <button type="button" class="qtyControl plus">+</button>
                                                             </div>
                                                             <div class="listAction">
-                                                                <button type="button" class="button btn-outline btn-addCart ">
+                                                                <button type="button" class="button btn-outline btn-addCart">
                                                                     <span>Thêm vào giỏ</span>
                                                                 </button>
-                                                                <button type="button" class="button btn-outline btn-Buynow ">
-                                                                    <span>Mua ngay</span>
-                                                                </button>
-                                                                <a href="javascript:void(0)" class="button btn-outline btn-Soldout hidden">Hết hàng</a>
+                                                                {{--<button type="button" class="button btn-outline btn-Buynow ">--}}
+                                                                    {{--<span>Mua ngay</span>--}}
+                                                                {{--</button>--}}
+                                                                {{--<a href="javascript:void(0)" class="button btn-outline btn-Soldout hidden">Hết hàng</a>--}}
                                                             </div>
                                                         </div>
                                                         {{--Share Facebook--}}

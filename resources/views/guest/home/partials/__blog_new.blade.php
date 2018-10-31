@@ -31,7 +31,7 @@
                                                 <li class="comment"><i class="fa fa-comments-o"
                                                                        aria-hidden="true"></i> <span>0</span></li>
                                                 <li class="post"><i class="fa fa-pencil-square-o"
-                                                                    aria-hidden="true"></i> <span>ST Fashion</span>
+                                                                    aria-hidden="true"></i> <span>{{$appInfo->app_name}}</span>
                                                 </li>
                                             </ul>
                                         </div>

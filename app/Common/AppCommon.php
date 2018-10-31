@@ -13,7 +13,7 @@ class AppCommon{
     }
 
     public static function newDate($format = "m/d/Y"){
-        return Carbon::now(self::dateTimeZone())->format($format);
+        return Carbon::now(self::dateTimeZone());
     }
 
     public static function createFromFormat($value, $format = "m/d/Y"){
@@ -21,19 +21,19 @@ class AppCommon{
     }
 
     public static function dateFormat($value, $format = "d-m-Y H:i"){
-        return Carbon::parse($value)->addHours(7)->format($format);
+        return Carbon::parse($value)->format($format);
     }
 
     public static function getDayOnDate($value){
-        return Carbon::parse($value)->addHours(7)->day;
+        return Carbon::parse($value)->day;
     }
     public static function getMonthOnDate($value){
-        return Carbon::parse($value)->addHours(7)->shortEnglishMonth;
+        return Carbon::parse($value)->shortEnglishMonth;
     }
 
     public static function dateFormatText($value, $format = "d-M-Y H:i"){
         $today = date("d-M-Y");
-        $another_date = Carbon::parse($value)->addHours(7);
+        $another_date = Carbon::parse($value);
 
         $days = (strtotime($today) - strtotime($another_date->format('d-M-Y')))/ (60 * 60 * 24);
 
