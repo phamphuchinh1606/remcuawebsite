@@ -15,4 +15,16 @@ class AddressService extends BaseService{
         return $this->addressLogic->createDistrict($code, $label, $lat, $lon, $name, $provinceCode);
     }
 
+    public function getProvinceByCode($code){
+        return $this->addressLogic->getProvinceByCode($code);
+    }
+
+    public function getProvinceAll(){
+        return $this->addressLogic->getProvinceAll();
+    }
+
+    public function getDistrictByProvinceCode($provinceCode){
+        return $this->addressLogic->getDistrictByProvinceCode($provinceCode);
+    }
+
 }

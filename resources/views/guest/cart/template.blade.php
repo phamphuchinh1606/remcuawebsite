@@ -99,10 +99,9 @@
                         <li class="breadcrumb-item breadcrumb-item-current">
                             Thông tin giao hàng
                         </li>
-                        <li class="breadcrumb-item ">
-                            Phương thức thanh toán
-                        </li>
-
+                        {{--<li class="breadcrumb-item ">--}}
+                            {{--Phương thức thanh toán--}}
+                        {{--</li>--}}
                     </ul>
 
                 </div>

@@ -150,11 +150,14 @@ class CartController extends Controller
 
     public function checkOut(){
         $conditionShippingInfo = Cart::getCondition($this->nameCartConditionShipping);
+        $provinces = $this->addressService->getProvinceAll();
         if(!$conditionShippingInfo){
             $conditionShippingInfo = $this->initConditionShipping();
             Cart::condition($conditionShippingInfo);
         }
-        return view('guest.cart.check_out',['shippingInfo' => $conditionShippingInfo->getAttributes()]);
+        return view('guest.cart.check_out',[
+            'shippingInfo' => $conditionShippingInfo->getAttributes(),
+            'provinces' => $provinces]);
     }
 
     public function showPayment(Request $request){
@@ -165,7 +168,8 @@ class CartController extends Controller
         Cart::removeCartCondition($this->nameCartConditionShipping);
         $conditionShippingInfo = $this->initConditionShipping($request);
         Cart::condition($conditionShippingInfo);
-        return view('guest.cart.check_out_payment');
+//        return redirect()->route('cart.check_out.finish');
+        return $this->finishCreateCart($request);
     }
 
     private function clearCart(){
@@ -183,5 +187,13 @@ class CartController extends Controller
         $this->orderService->createOrder($cartItems, $shippingInfo, $totalAmount, $shipmentAmount);
         $this->clearCart();
         return redirect()->route('cart')->with('message','Chúc mừng bạn đã đặt hàng thành công . Chúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất.');
+    }
+
+    public function district(Request $request){
+        $data = [];
+        if(isset($request->province_code)){
+            $data = $this->addressService->getDistrictByProvinceCode($request->province_code);
+        }
+        return response()->json($data);
     }
 }

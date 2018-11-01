@@ -46,7 +46,7 @@
 
                     <ul class="searchEx notStyle">
                         <li class="title"><strong>Gợi ý từ khóa:</strong></li>
-                        <li><span>Rèm màng cửa phương anh, rèm cửa ...</span></li>
+                        <li><span>Rèm màn cửa phương anh, rèm cửa ...</span></li>
                     </ul>
 
                 </div>

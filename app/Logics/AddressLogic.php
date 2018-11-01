@@ -38,4 +38,16 @@ class AddressLogic extends BaseLogic{
         $district->save();
         return $district;
     }
+
+    public function getProvinceAll(){
+        return Province::all();
+    }
+
+    public function getProvinceByCode($code){
+        return Province::whereCode($code)->first();
+    }
+
+    public function getDistrictByProvinceCode($provinceCode){
+        return District::whereProvinceCode($provinceCode)->get();
+    }
 }

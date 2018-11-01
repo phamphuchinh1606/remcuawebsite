@@ -14,6 +14,7 @@ use App\Services\ProductService;
 use App\Services\VendorService;
 use App\Services\SettingService;
 use App\Services\BlogService;
+use App\Services\AddressService;
 
 class Controller extends BaseController
 {
@@ -33,9 +34,12 @@ class Controller extends BaseController
 
     protected $orderService;
 
+    protected $addressService;
+
     public function __construct(ProductTypeService $productTypeService, ProductService $productService,
                                 VendorService $vendorService, SettingService $settingService,
-                                BlogService $blogService, ContactService $contactService, OrderService $orderService)
+                                BlogService $blogService, ContactService $contactService, OrderService $orderService,
+                                AddressService $addressService)
     {
         $this->productTypeService = $productTypeService;
         $this->productService = $productService;
@@ -44,5 +48,6 @@ class Controller extends BaseController
         $this->blogService = $blogService;
         $this->contactService = $contactService;
         $this->orderService = $orderService;
+        $this->addressService = $addressService;
     }
 }

@@ -17,5 +17,6 @@ Route::post('/cart/check-out/payment', 'CartController@showPayment')->name('cart
 Route::post('/cart/check-out/finish','CartController@finishCreateCart')->name('cart.check_out.finish');
 Route::get('/cart/check-out','CartController@checkOut')->name('cart.check_out');
 Route::get('/cart/delete/{id}','CartController@destroy')->name('cart.delete');
+Route::get('/cart/district','CartController@district')->name('cart.address.district');
 Route::get('/cart','CartController@index')->name('cart');
 

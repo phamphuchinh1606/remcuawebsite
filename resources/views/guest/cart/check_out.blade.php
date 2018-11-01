@@ -10,10 +10,10 @@
                         <h2 class="section-title">Thông tin giao hàng</h2>
                     </div>
                     {{--Section Content Not Login--}}
-                    @include('guest.cart.__section_content_not_login', ['shippingInfo', $shippingInfo])
+                    @include('guest.cart.__section_content_not_login', ['shippingInfo' => $shippingInfo])
 
                     {{--Section Content Address--}}
-                    @include('guest.cart.__section_content_address', ['shippingInfo', $shippingInfo])
+                    @include('guest.cart.__section_content_address', ['shippingInfo' => $shippingInfo, 'provinces' => $provinces])
 
                     <div id="change_pick_location_or_shipping">
 
@@ -26,7 +26,7 @@
             <div class="step-footer">
                 <input name="utf8" type="hidden" value="✓">
                 <button type="submit" class="step-footer-continue-btn btn">
-                    <span class="btn-content">Tiếp tục đến phương thức thanh toán</span>
+                    <span class="btn-content">Hoàn tất đơn hàng</span>
                     <i class="btn-spinner icon icon-button-spinner"></i>
                 </button>
                 <a class="step-footer-previous-link" href="{{route('cart')}}">

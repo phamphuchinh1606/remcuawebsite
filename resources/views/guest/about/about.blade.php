@@ -1,6 +1,6 @@
 @extends('guest.layouts.master')
 
-@section('head.title',"Liên hệ")
+@section('head.title',"Giới thiệu")
 
 @section('head.css')
     <link href='{{ asset('/css/guest/plugins/pages.css?v=1543') }}' rel='stylesheet' type='text/css'  media='all'  />

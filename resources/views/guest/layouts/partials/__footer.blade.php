@@ -89,7 +89,7 @@
                         <div class="s-div-fot-ct">
                             <div class="s-fot-title">Kết nối với chúng tôi</div>
                             <div class="s-fot-lkw">
-                                <a href="#1"><i class="fa fa-facebook"></i></a>
+                                <a href="{{$appInfo->app_link_facebook_fanpage}}" target="_blank"><i class="fa fa-facebook"></i></a>
                                 <a href="#2"><i class="fa fa-twitter"></i></a>
                                 <a href="#3"><i class="fa fa-youtube"></i></a>
                                 <a href="#4"><i class="fa fa-instagram"></i></a>
