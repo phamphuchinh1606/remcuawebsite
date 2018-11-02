@@ -39,13 +39,13 @@
                                         <div class="form-group row">
                                             <label class="col-md-2 col-form-label" for="text-input">Tên Sản Phẩm</label>
                                             <div class="col-md-10">
-                                                <input class="form-control" id="text-input" type="text" name="product_name" placeholder="Tên sản phẩm">
+                                                <input class="form-control" id="text-input" type="text" name="product_name" placeholder="Tên sản phẩm" required>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-md-2 col-form-label" for="text-input">Mã Sản Phẩm</label>
                                             <div class="col-md-10">
-                                                <input class="form-control" id="text-input" type="text" name="product_code" placeholder="Mã sản phẩm">
+                                                <input class="form-control" id="text-input" type="text" name="product_code" placeholder="Mã sản phẩm" required>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -151,9 +151,7 @@
                                     </div>
                                     <div class="card-footer text-right">
                                         <button class="btn btn-sm btn-primary" type="submit">
-                                            <i class="fa fa-dot-circle-o"></i> Submit</button>
-                                        <button class="btn btn-sm btn-danger" type="reset">
-                                            <i class="fa fa-ban"></i> Reset</button>
+                                            <i class="fa fa-dot-circle-o"></i> Tạo mới</button>
                                     </div>
                                 </div>
                             </form>

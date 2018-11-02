@@ -122,7 +122,7 @@
 
                                                         <div class="pdPrice">
                                                             <p class="item price">
-                                                                <span class="pdLabelPrice">Tại ST Fashion: </span>
+                                                                <span class="pdLabelPrice">Tại phương anh: </span>
                                                                 <span id="pdPriceNumber">339,000₫</span>
                                                             </p>
                                                             <p class="item comparePrice ">

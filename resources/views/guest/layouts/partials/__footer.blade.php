@@ -12,7 +12,7 @@
                                     <img class="insImageload"
                                         data-load="true"
                                         src="{{asset($appInfo->app_src_icon)}}"
-                                        alt="ST Fashion"
+                                        alt="{{$appInfo->app_name}}"
                                         itemprop="logo">
                                 </a>
                             </div>
@@ -95,21 +95,21 @@
                                 <a href="#4"><i class="fa fa-instagram"></i></a>
                                 <a href="#5"><i class="fa fa-pinterest"></i></a>
                             </div>
-                            <div class="s-fot-title">Đăng kí nhận bản tin</div>
-                            <form accept-charset='UTF-8' action='/account/contact' class='contact-form'
-                                  method='post'>
-                                <input name='form_type' type='hidden' value='customer'>
-                                <input name='utf8' type='hidden' value='✓'>
+                            {{--<div class="s-fot-title">Đăng kí nhận bản tin</div>--}}
+                            {{--<form accept-charset='UTF-8' action='/account/contact' class='contact-form'--}}
+                                  {{--method='post'>--}}
+                                {{--<input name='form_type' type='hidden' value='customer'>--}}
+                                {{--<input name='utf8' type='hidden' value='✓'>--}}
 
-                                <div class="input-group s-form">
-                                    <input type="email" class="form-control" name="contact[email]"
-                                           placeholder="Email của bạn" value="" required="">
-                                    <div class="input-group-btn">
-                                        <button type="submit" class="btn">Gửi</button>
-                                    </div>
-                                </div>
+                                {{--<div class="input-group s-form">--}}
+                                    {{--<input type="email" class="form-control" name="contact[email]"--}}
+                                           {{--placeholder="Email của bạn" value="" required="">--}}
+                                    {{--<div class="input-group-btn">--}}
+                                        {{--<button type="submit" class="btn">Gửi</button>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
 
-                            </form>
+                            {{--</form>--}}
                         </div>
                     </div>
 

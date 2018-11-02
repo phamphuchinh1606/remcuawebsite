@@ -3,14 +3,28 @@
 .fone {
     font-size: 19px;
     color: #f00;
-    line-height: 40px;
+    /*line-height: 40px;*/
     font-weight: bold;
     padding-left: 48px;
     margin: 0 0;
 }
 .fix_tel { position:fixed; top:50%; right:18px; z-index:999;}
 .fix_tel a {text-decoration: none; display:block;}
-.tel { background: #eee;width:205px; height:40px; position:relative; overflow:hidden;background-size:40px;border-radius:28px;border:none}
+.tel {
+    background: #eee;
+    width:205px;
+    height:45px;
+    position:relative;
+    overflow:hidden;
+    background-size:40px;
+    border-radius:28px;
+    border:none
+}
+.tel small {
+    font-size: 10px;
+    padding-left: 50px;
+    font-weight: bold;
+}
 .ring-alo-phone {
     background-color: transparent;
     cursor: pointer;
@@ -94,7 +108,7 @@
     left: 30px;		    
     opacity: 1;
     position: absolute;
-    top: 33px;
+    top: 30px;
     transform-origin: 50% 50% 0;
     width: 30px;
 }
@@ -107,6 +121,25 @@
 }
 .ring-alo-phone.ring-alo-green .ring-alo-ph-img-circle {
     background-color: #009900;
+}
+
+@media screen and (max-width: 991px){
+    .fix_tel{
+        left:18px;
+        top:50%;
+    }
+    .tel {
+        width: 175px;
+    }
+    .tel small {
+        padding-left: 20px;
+    }
+    .fone {
+        padding-left: 15px;
+    }
+    .ring-alo-ph-img-circle {
+        /*left:50px;*/
+    }
 }
 @keyframes ring-alo-circle-anim {
 	0% {
@@ -167,3 +200,4 @@
 	    top: -1px;
 	}
 }
+

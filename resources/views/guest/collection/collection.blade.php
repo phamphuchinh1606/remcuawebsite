@@ -6,6 +6,7 @@
 
 @section('head.css')
     <link href='{{ asset('/css/guest/plugins/pages.css?v=1543') }}' rel='stylesheet' type='text/css'  media='all'  />
+    <link href='{{ asset('/css/guest/blog.css') }}' rel='stylesheet' type='text/css'  media='all'  />
 @endsection
 
 @section('template','collection')

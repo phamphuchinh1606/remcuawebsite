@@ -4,7 +4,9 @@
             <div class="row">
                 <div id="headerLogo" class="col-md-3 col-sm-12 col-xs-12">
                     <div class="visible-xs visible-sm mbToggle translateY-50">
-
+                        <a href="javascript:void(0)" class="btnMBToggleNav">
+                            <img src="{{asset('images/guest/menu_mobile.png')}}" alt="Beauty style">
+                        </a>
                     </div>
 
                     <p>
