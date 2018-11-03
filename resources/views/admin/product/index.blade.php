@@ -64,7 +64,7 @@
                                                         {{$key + 1}}
                                                     </td>
                                                     <td >
-                                                        <img src="{{asset('storage/'.$product->product_image)}}" width="100" height="100"/>
+                                                        <img src="{{asset(\App\Common\Constant::$PATH_URL_UPLOAD_IMAGE.$product->product_image)}}" width="100" height="100"/>
                                                     </td>
                                                     <td class="">
                                                         {{$product->product_name}}

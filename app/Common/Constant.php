@@ -23,6 +23,7 @@ class Constant{
     public static $PATH_FOLDER_UPLOAD_IMAGE_DROP = "images_drop";
     public static $PATH_FOLDER_UPLOAD_PRODUCT = "products";
     public static $PATH_FOLDER_UPLOAD_PRODUCT_TYPE = "product_types";
+//    public static $PATH_URL_UPLOAD_IMAGE = "storage/app/public";
     public static $PATH_URL_UPLOAD_IMAGE = "storage/";
     public static $PATH_FOLDER_UPLOAD_IMAGE_BANNER = "banners";
     public static $PATH_FOLDER_UPLOAD_IMAGE_TOP_BANNER = 'top_banners';
