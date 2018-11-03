@@ -25,8 +25,12 @@ class CreateSettingAppInfosTable extends Migration
             $table->string('app_address_google_map',1000)->nullable(true);
             $table->string('app_title_chat_box',255)->nullable(true);
             $table->string('app_link_facebook_fanpage',1000)->nullable(true);
+            $table->string('app_link_twitter',1000)->nullable(true);
+            $table->string('app_link_youtube',1000)->nullable(true);
+            $table->string('app_link_instagram',1000)->nullable(true);
             $table->string('app_make_product_video_one',1000)->nullable(true);
             $table->string('app_make_product_video_two',1000)->nullable(true);
+            $table->string('app_content',1000)->nullable(true);
             $table->timestamps();
         });
     }

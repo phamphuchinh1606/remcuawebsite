@@ -13,14 +13,14 @@
         </title>
 
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=0' name='viewport'/>
-        <meta name="description" content="Rèm cửa đẹp nhiều mẫu mã phong phú. rèm màn cửa phương anh mọi lúc mọi nơi , rèm cửa giá tốt hợp lý , phải chăn">
-        <meta name="keywords" content="Rèm Vải , Rèm cửa , rem cửa phương anh , rèm man cửa phương anh">
+        <meta name="description" content="@yield('head.description',$appInfo->app_content)}}">
+        <meta name="keywords" content="{{$appInfo->app_content}}">
         <link rel="canonical" href="{{URL::to('/')}}"/>
         <link rel="pingback" href="{{URL::to('/')}}">
         <meta property="og:locale" content="vi_VN">
         <meta property="og:type" content="website">
         <meta property="og:title" content="{{$appInfo->app_name}}">
-        <meta property="og:description" content="rem man cua phuong anh , loai rem , mang cua , rem cac loai">
+        <meta property="og:description" content="{{$appInfo->app_content}}">
         <meta property="og:url" content="{{URL::to('/')}}">
         <meta property="og:site_name" content="{{$appInfo->app_name}}">
         <meta property="article:publisher" content="{{$appInfo->app_link_facebook_fanpage}}">

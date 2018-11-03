@@ -34,6 +34,7 @@ class OrderService extends BaseService{
             $params['paymentAmount'] = 0;
             $params['statusOrder'] = Constant::$ORDER_STATUS_NEW_CODE;
             $params['note'] = $shippingInfo['note'];
+            $params['orderCode'] = $this->ramdomOrderCode();
             //Create Order
             $order = $this->orderLogic->create($params);
 
@@ -69,9 +70,11 @@ class OrderService extends BaseService{
         $maxOrderCode = $this->orderLogic->getMaxOrderCode();
         $strStart = "HD";
         if(isset($maxOrderCode)){
-
+            $intMaxOrder = str_replace($strStart,"",$maxOrderCode);
+            $number = intval($intMaxOrder) + 1;
+            return $strStart.str_pad($number,6,'0',STR_PAD_LEFT);
         }else{
-            return str_pad($strStart,7,'0').'1';
+            return $strStart.str_pad(1,6,'0',STR_PAD_LEFT);
         }
     }
 

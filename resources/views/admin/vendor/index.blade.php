@@ -58,15 +58,15 @@
                                                         {{$vendor->vendor_name}}
                                                     </td>
                                                     <td>
-                                                        <a class="btn btn-success" href="#">
-                                                            <i class="fa fa-search-plus"></i>
-                                                        </a>
+                                                        {{--<a class="btn btn-success" href="#">--}}
+                                                            {{--<i class="fa fa-search-plus"></i>--}}
+                                                        {{--</a>--}}
                                                         <a class="btn btn-info" href="{{route('admin.vendor.update',['id' => $vendor->id])}}">
                                                             <i class="fa fa-edit"></i>
                                                         </a>
-                                                        <a class="btn btn-danger" href="#">
-                                                            <i class="fa fa-trash-o"></i>
-                                                        </a>
+                                                        {{--<a class="btn btn-danger" href="#">--}}
+                                                            {{--<i class="fa fa-trash-o"></i>--}}
+                                                        {{--</a>--}}
                                                     </td>
                                                 </tr>
                                             @endforeach

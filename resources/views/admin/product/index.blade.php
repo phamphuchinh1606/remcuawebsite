@@ -82,9 +82,9 @@
                                                         <span class="badge {{$product->public_class}}">{{$product->public_name}}</span>
                                                     </td>
                                                     <td class="text-center">
-                                                        <a class="btn btn-success" href="#">
-                                                        <i class="fa fa-search-plus"></i>
-                                                        </a>
+                                                        {{--<a class="btn btn-success" href="#">--}}
+                                                            {{--<i class="fa fa-search-plus"></i>--}}
+                                                        {{--</a>--}}
                                                         <a class="btn btn-info" href="{{route('admin.product.update',['id' => $product->id])}}">
                                                             <i class="fa fa-edit"></i>
                                                         </a>

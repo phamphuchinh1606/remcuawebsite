@@ -1,6 +1,6 @@
 <!-- code nút gọi dán vào web. Thường là footer -->
 <div class="fix_tel">
-    <div class="ring-alo-phone ring-alo-green ring-alo-show" id="ring-alo-phoneIcon" style="right: 150px; bottom: -12px;">
+    <div class="ring-alo-phone ring-alo-green ring-alo-show" id="ring-alo-phoneIcon">
         <div class="ring-alo-ph-circle"></div>
         <div class="ring-alo-ph-circle-fill"></div>
         <div class="ring-alo-ph-img-circle">

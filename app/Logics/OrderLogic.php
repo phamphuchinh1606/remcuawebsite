@@ -71,12 +71,15 @@ class OrderLogic extends BaseLogic{
         $order->payment_amount = $params['paymentAmount'];
         $order->status_order = $params['statusOrder'];
         $order->note = $params['note'];
+        if(isset($params['orderCode'])){
+            $order->order_code = $params['orderCode'];
+        }
         $order->save();
         return $order;
     }
 
     public function getMaxOrderCode(){
-        $orderCode = Order::max('order_code')->first();
-        return $orderCode->order_code;
+        $orderCode = Order::max('order_code');
+        return $orderCode;
     }
 }

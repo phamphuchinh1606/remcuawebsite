@@ -34,6 +34,8 @@
     visibility: hidden;
     width: 80px;
     z-index: 200000 !important;
+    right: 150px;
+    bottom: -12px;
 }
 .ring-alo-phone.ring-alo-show {
     visibility: visible;
@@ -125,17 +127,25 @@
 
 @media screen and (max-width: 991px){
     .fix_tel{
-        left:18px;
-        top:50%;
+        left:5px;
+        top:90%;
+        width: 50px;
     }
     .tel {
-        width: 175px;
+        width: 50px;
+        background:none;
+    }
+    .tel small, .tel .fone {
+        display: none;
     }
     .tel small {
         padding-left: 20px;
     }
     .fone {
         padding-left: 15px;
+    }
+    .ring-alo-phone {
+        left: 0px;
     }
     .ring-alo-ph-img-circle {
         /*left:50px;*/

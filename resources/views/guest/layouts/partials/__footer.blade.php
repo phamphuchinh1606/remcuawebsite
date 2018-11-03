@@ -40,7 +40,7 @@
                                 <li><a href="{{route('home')}}">Trang chủ</a></li>
 
 
-                                <li><a href="/collections/all">Sản phẩm</a></li>
+                                <li><a href="{{route('collection_all')}}">Sản phẩm</a></li>
 
 
                                 <li><a href="{{route('blog')}}">Tin tức</a></li>
@@ -67,7 +67,7 @@
                                 <li><a href="{{route('home')}}">Trang chủ</a></li>
 
 
-                                <li><a href="/collections/all">Sản phẩm</a></li>
+                                <li><a href="{{route('collection_all')}}">Sản phẩm</a></li>
 
 
                                 <li><a href="{{route('blog')}}">Tin tức</a></li>

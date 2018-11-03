@@ -4,6 +4,8 @@
 
 @section('head.title', $product->product_name)
 
+@section('head.description', $product->product_description)
+
 @section('head.css')
     <link href='{{ asset('/css/guest/plugins/pages.css?v=1543') }}' rel='stylesheet' type='text/css'  media='all'  />
     <link href='{{ asset('/css/guest/plugins/jquery.fancybox.css?v=1543') }}' rel='stylesheet' type='text/css'  media='all'  />

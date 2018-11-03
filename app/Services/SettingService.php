@@ -95,8 +95,12 @@ class SettingService extends BaseService{
             $params['appAddressGoogleMap'] = $request->app_address_google_map;
             $params['appTitleChatBox'] = $request->app_title_chat_box;
             $params['appLinkFacebookFanpage'] = $request->app_link_facebook_fanpage;
+            $params['appLinkTwitter'] = $request->app_link_twitter;
+            $params['appLinkYoutube'] = $request->app_link_youtube;
+            $params['appLinkInstagram'] = $request->app_link_instagram;
             $params['appMakeProductVideoOne'] = $request->app_make_product_video_one;
             $params['appMakeProductVideoTwo'] = $request->app_make_product_video_two;
+            $params['appContent'] = $request->app_content;
             if(isset($request->app_icon)){
                 if(isset($request->app_src_icon)){
                     ImageCommon::deleteImageLogo($request->app_src_icon);

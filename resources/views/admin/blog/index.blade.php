@@ -76,15 +76,15 @@
                                                             <span class="badge {{$blog->public_class}}">{{$blog->public_name}}</span>
                                                         </td>
                                                         <td class="text-center">
-                                                            <a class="btn btn-success" href="#">
-                                                                <i class="fa fa-search-plus"></i>
-                                                            </a>
+                                                            {{--<a class="btn btn-success" href="#">--}}
+                                                                {{--<i class="fa fa-search-plus"></i>--}}
+                                                            {{--</a>--}}
                                                             <a class="btn btn-info" href="{{route('admin.blog.update',['id' => $blog->id])}}">
                                                                 <i class="fa fa-edit"></i>
                                                             </a>
-                                                            <a class="btn btn-danger" href="#">
-                                                                <i class="fa fa-trash-o"></i>
-                                                            </a>
+                                                            {{--<a class="btn btn-danger" href="#">--}}
+                                                                {{--<i class="fa fa-trash-o"></i>--}}
+                                                            {{--</a>--}}
                                                         </td>
                                                     </tr>
                                                 @endforeach

@@ -70,15 +70,15 @@
                                                             <span class="badge {{$productType->public_class}}">{{$productType->public_name}}</span>
                                                         </td>
                                                         <td class="text-center">
-                                                            <a class="btn btn-success" href="#">
-                                                                <i class="fa fa-search-plus"></i>
-                                                            </a>
+                                                            {{--<a class="btn btn-success" href="#">--}}
+                                                                {{--<i class="fa fa-search-plus"></i>--}}
+                                                            {{--</a>--}}
                                                             <a class="btn btn-info" href="{{route('admin.product_type.update',['id' => $productType->id])}}">
                                                                 <i class="fa fa-edit"></i>
                                                             </a>
-                                                            <a class="btn btn-danger" href="#">
-                                                                <i class="fa fa-trash-o"></i>
-                                                            </a>
+                                                            {{--<a class="btn btn-danger" href="#">--}}
+                                                                {{--<i class="fa fa-trash-o"></i>--}}
+                                                            {{--</a>--}}
                                                         </td>
                                                     </tr>
                                                 @endforeach
