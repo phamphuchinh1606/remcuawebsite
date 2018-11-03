@@ -154,11 +154,11 @@
                                                             </h4>
                                                             <div class="box_social">
                                                                 <div class="fb">
-                                                                    <div class="fb-like" data-href="https://st-fashion.myharavan.com/products/ao-so-mi-dai-tay-aristino-als021" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                                                                    <div class="fb-like" data-href="{{route('product_detail',['slug' => $product->slug, 'id' => $product->id])}}" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
                                                                 </div>
-                                                                <div class="gg">
-                                                                    <div class="g-plus" data-action="share" data-annotation="none" data-href="https://st-fashion.myharavan.com/products/ao-so-mi-dai-tay-aristino-als021"></div>
-                                                                </div>
+                                                                {{--<div class="gg">--}}
+                                                                    {{--<div class="g-plus" data-action="share" data-annotation="none" data-href="{{route('product_detail',['slug' => $product->slug, 'id' => $product->id])}}"></div>--}}
+                                                                {{--</div>--}}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -191,7 +191,7 @@
                                     <div role="tabpanel" class="tab-pane fade" id="tabFbComment">
                                         <div class="container-comments">
                                             <div id="fb-root"></div>
-                                            <div class="fb-comments" data-href="https://st-fashion.myharavan.com/products/ao-so-mi-dai-tay-aristino-als021" data-numposts="5" width="100%" data-colorscheme="light"></div>
+                                            <div class="fb-comments" data-href="{{route('product_detail',['slug' => $product->slug, 'id' => $product->id])}}" data-numposts="5" width="100%" data-colorscheme="light"></div>
                                         </div>
                                     </div>
                                 </div>
