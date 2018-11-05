@@ -15,14 +15,14 @@
                     <div class="item-block">
                         <div class="header-image">
                             <div class="">
-                                <img width="64" height="64" src="https://vidakhacten.com.vn/wp-content/uploads/2017/06/phone.png" data-lazy-src="https://vidakhacten.com.vn/wp-content/uploads/2017/06/phone.png" class="vc_single_image-img attachment-thumbnail     lazyloaded" alt="">
+                                <img width="64" height="64" src="{{asset('images/guest/phone.png')}}" data-lazy-src="{{asset('images/guest/phone.png')}}" class="vc_single_image-img attachment-thumbnail     lazyloaded" alt="">
                                 <noscript>
-                                    <img width="64" height="64" src="https://vidakhacten.com.vn/wp-content/uploads/2017/06/phone.png" class="vc_single_image-img attachment-thumbnail" alt="" />
+                                    <img width="64" height="64" src="{{asset('images/guest/phone.png')}}" class="vc_single_image-img attachment-thumbnail" alt="" />
                                 </noscript>
                             </div>
                         </div>
                         <h2 style="font-size: 25px;color: #000000;line-height: 1.4;text-align: center;font-family:Roboto Condensed;font-weight:700;font-style:normal" class="vc_custom_heading">
-                            <a href="/vi-da-nam" target=" _blank">ĐẶT HÀNG</a>
+                            ĐẶT HÀNG
                         </h2>
                         <div class="wpb_text_column wpb_content_element ">
                             <div class="wpb_wrapper">
@@ -36,14 +36,14 @@
                     <div class="item-block">
                         <div class="header-image">
                             <div class="">
-                                <img width="64" height="64" src="https://vidakhacten.com.vn/wp-content/uploads/2017/06/driller.png" data-lazy-src="https://vidakhacten.com.vn/wp-content/uploads/2017/06/driller.png" class="vc_single_image-img attachment-thumbnail     lazyloaded" alt="">
+                                <img width="64" height="64" src="{{asset('images/guest/driller.png')}}" data-lazy-src="{{asset('images/guest/driller.png')}}" class="vc_single_image-img attachment-thumbnail     lazyloaded" alt="">
                                 <noscript>
-                                    <img width="64" height="64" src="https://vidakhacten.com.vn/wp-content/uploads/2017/06/driller.png" class="vc_single_image-img attachment-thumbnail" alt="" />
+                                    <img width="64" height="64" src="{{asset('images/guest/driller.png')}}" class="vc_single_image-img attachment-thumbnail" alt="" />
                                 </noscript>
                             </div>
                         </div>
                         <h2 style="font-size: 25px;color: #000000;line-height: 1.4;text-align: center;font-family:Roboto Condensed;font-weight:700;font-style:normal" class="vc_custom_heading">
-                            <a href="/vi-da-nam" target=" _blank">TIẾN HÀNH GIA CÔNG</a>
+                            TIẾN HÀNH GIA CÔNG
                         </h2>
                         <div class="wpb_text_column wpb_content_element ">
                             <div class="wpb_wrapper">
@@ -57,14 +57,14 @@
                     <div class="item-block">
                         <div class="header-image">
                             <div class="">
-                                <img width="64" height="64" src="https://vidakhacten.com.vn/wp-content/uploads/2017/06/delivery-truck-2.png" data-lazy-src="https://vidakhacten.com.vn/wp-content/uploads/2017/06/delivery-truck-2.png" class="vc_single_image-img attachment-thumbnail     lazyloaded" alt="">
+                                <img width="64" height="64" src="{{asset('images/guest/delivery-truck-2.png')}}" data-lazy-src="{{asset('images/guest/delivery-truck-2.png')}}" class="vc_single_image-img attachment-thumbnail     lazyloaded" alt="">
                                 <noscript>
-                                    <img width="64" height="64" src="https://vidakhacten.com.vn/wp-content/uploads/2017/06/delivery-truck-2.png" class="vc_single_image-img attachment-thumbnail" alt="" />
+                                    <img width="64" height="64" src="{{asset('images/guest/delivery-truck-2.png')}}" class="vc_single_image-img attachment-thumbnail" alt="" />
                                 </noscript>
                             </div>
                         </div>
                         <h2 style="font-size: 25px;color: #000000;line-height: 1.4;text-align: center;font-family:Roboto Condensed;font-weight:700;font-style:normal" class="vc_custom_heading">
-                            <a href="/vi-da-nam" target=" _blank">VẬN CHUYỂN</a>
+                            VẬN CHUYỂN
                         </h2>
                         <div class="wpb_text_column wpb_content_element ">
                             <div class="wpb_wrapper">
@@ -78,14 +78,14 @@
                     <div class="item-block">
                         <div class="header-image">
                             <div class="">
-                                <img width="64" height="64" src="https://vidakhacten.com.vn/wp-content/uploads/2017/06/get-money.png" data-lazy-src="https://vidakhacten.com.vn/wp-content/uploads/2017/06/get-money.png" class="vc_single_image-img attachment-thumbnail     lazyloaded" alt="">
+                                <img width="64" height="64" src="{{asset('images/guest/get-money.png')}}" data-lazy-src="{{asset('images/guest/get-money.png')}}" class="vc_single_image-img attachment-thumbnail     lazyloaded" alt="">
                                 <noscript>
-                                    <img width="64" height="64" src="https://vidakhacten.com.vn/wp-content/uploads/2017/06/get-money.png" class="vc_single_image-img attachment-thumbnail" alt="" />
+                                    <img width="64" height="64" src="{{asset('images/guest/get-money.png')}}" class="vc_single_image-img attachment-thumbnail" alt="" />
                                 </noscript>
                             </div>
                         </div>
                         <h2 style="font-size: 25px;color: #000000;line-height: 1.4;text-align: center;font-family:Roboto Condensed;font-weight:700;font-style:normal" class="vc_custom_heading">
-                            <a href="/vi-da-nam" target=" _blank">THU TIỀN</a>
+                            THU TIỀN
                         </h2>
                         <div class="wpb_text_column wpb_content_element ">
                             <div class="wpb_wrapper">

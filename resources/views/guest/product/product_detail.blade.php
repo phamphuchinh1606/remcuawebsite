@@ -6,6 +6,11 @@
 
 @section('head.description', $product->product_description)
 
+@section('head.og.title',$product->product_name)
+@section('head.og.description',$product->product_description)
+@section('head.og.image',asset(Constant::$PATH_URL_UPLOAD_IMAGE.$product->product_image))
+@section('head.og.url',route('product_detail',['id' => $product->id, 'slug' => $product->slug]))
+
 @section('head.css')
     <link href='{{ asset('/css/guest/plugins/pages.css?v=1543') }}' rel='stylesheet' type='text/css'  media='all'  />
     <link href='{{ asset('/css/guest/plugins/jquery.fancybox.css?v=1543') }}' rel='stylesheet' type='text/css'  media='all'  />
