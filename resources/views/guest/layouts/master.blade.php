@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <head>
-        <link rel="shortcut icon" href="{{asset('/images/faco_icon.png')}}" type="image/png"/>
+        <link rel="shortcut icon" href="{{asset($appInfo->app_src_icon)}}" type="image/png"/>
         <meta charset="utf-8"/>
         <!--[if IE]>
         <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'/>
