@@ -79,6 +79,13 @@ class SettingLogic extends BaseLogic{
         return $appInfo;
     }
 
+    public function save(SettingAppInfo $appInfo){
+        if(isset($appInfo)){
+            $appInfo->save();
+        }
+        return $appInfo;
+    }
+
     public function updateAppInfo($params = []){
         if(isset($params['appId'])){
             $appInfo = SettingAppInfo::find($params['appId']);

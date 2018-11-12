@@ -31,4 +31,9 @@ Route::delete('setting/tag/delete/{id}','SettingController@tagDestroy')->name('s
 Route::get('/setting/app-info','SettingController@appInfo')->name('setting.app');
 Route::post('/setting/app-info/update','SettingController@updateAppInfo')->name('setting.app.update');
 
+//Setting About Info
+Route::get('/setting/app-about','SettingController@appAboutUpdate')->name('setting.app_about.show');
+Route::post('/setting/app-about/update','SettingController@updateAboutAppInfo')->name('setting.app_about');
+
+
 

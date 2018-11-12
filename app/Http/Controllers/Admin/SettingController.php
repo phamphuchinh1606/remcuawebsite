@@ -77,4 +77,17 @@ class SettingController extends Controller
         return redirect()->route('admin.setting.app');
     }
     //End Controller App Info
+
+    public function appAboutUpdate(){
+        $appInfo = $this->settingService->getAppInfo();
+        return $this->viewAdmin('setting.app_about',['appInfo' => $appInfo]);
+    }
+
+    public function updateAboutAppInfo(Request $request){
+        $aboutContent = $request->about_content;
+        if(isset($aboutContent)){
+            $this->settingService->updateAppAboutContent($aboutContent);
+        }
+        return redirect()->route('admin.setting.app_about.show');
+    }
 }

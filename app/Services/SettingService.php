@@ -114,5 +114,14 @@ class SettingService extends BaseService{
         }
 
     }
+
+    public function updateAppAboutContent($aboutContent){
+        $appInfo = $this->settingLogic->getAppInfo();
+        if(!isset($appInfo)){
+            $appInfo = $this->settingLogic->createAppInfo();
+        }
+        $appInfo->about_content = $aboutContent;
+        $this->settingLogic->save($appInfo);
+    }
     //End App Info
 }

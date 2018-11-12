@@ -52,6 +52,12 @@
                             App Info
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('admin.setting.app_about.show')}}">
+                            <i class="nav-icon icon-wallet"></i>
+                            Thông tin giới thiệu
+                        </a>
+                    </li>
                 </ul>
             </li>
             <li class="nav-item">

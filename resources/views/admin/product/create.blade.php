@@ -134,7 +134,7 @@
                                             <div class="col-md-10">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <input type="hidden" value="phamphuchinh" class="editor" name="product_content"/>
+                                                        <input type="hidden" value="" class="editor" name="product_content"/>
                                                         <div id="editor" class="ql-container ql-snow editor_quill product_content">
 
                                                         </div>
