@@ -149,7 +149,7 @@ return [
         Darryldecode\Cart\CartServiceProvider::class,
         Galahad\LaravelAddressing\ServiceProvider::class,
         Ixudra\Curl\CurlServiceProvider::class,
-        Barryvdh\Debugbar\ServiceProvider::class,
+//        Barryvdh\Debugbar\ServiceProvider::class,
         Cviebrock\EloquentSluggable\ServiceProvider::class,
 
         /*

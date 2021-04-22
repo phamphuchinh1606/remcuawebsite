@@ -12,7 +12,7 @@
                     <p>
                         <a href="/">
                             <img src="{{asset($appInfo->app_src_icon)}}"
-                                    alt="{{$appInfo->app_name}}"/>
+                                    alt="{{$appInfo->app_name}}" style="max-height: 60px"/>
                         </a>
                     </p>
 

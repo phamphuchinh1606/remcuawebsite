@@ -13,7 +13,7 @@
                                         data-load="true"
                                         src="{{asset($appInfo->app_src_icon)}}"
                                         alt="{{$appInfo->app_name}}"
-                                        itemprop="logo">
+                                        itemprop="logo" style="max-height: 60px">
                                 </a>
                             </div>
                         </div>
